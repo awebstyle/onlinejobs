@@ -23,5 +23,4 @@
         <script src={{ asset("plugins/home-plugins/js/animate.js") }}></script>
         <script src={{ asset("plugins/home-plugins/js/custom.js") }}></script> 
         <script src={{ asset("plugins/home-plugins/js/script.js") }}></script>     
-    </body>
-</html>
+    

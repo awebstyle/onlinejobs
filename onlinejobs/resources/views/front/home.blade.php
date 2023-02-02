@@ -1,7 +1,7 @@
 @extends('front.template.index')
 
 @section('title')
-    home
+    Home
 @endsection
 
 @section('content')

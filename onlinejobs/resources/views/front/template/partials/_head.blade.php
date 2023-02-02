@@ -21,5 +21,4 @@
         <link href={{ asset("plugins/datepicker/datepicker3.css") }} rel="stylesheet" media="screen">
     </head>
 
-    <body>
-        <div id="wrapper" class="home-page">
+    
