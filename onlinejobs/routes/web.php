@@ -36,3 +36,15 @@ Route::get('/contactus', function(){
 Route::get('/hiring', function(){
     return view('front.hiring');
 })->name('hiring');
+
+Route::get('/jobbycompany', function(){
+    return view('front.jobbycompany');
+})->name('jobbycompany');
+
+Route::get('/jobbyfunction', function(){
+    return view('front.jobbyfunction');
+})->name('jobbyfunction');
+
+Route::get('/jobbytitle', function(){
+    return view('front.jobbytitle');
+})->name('jobbytitle');
