@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>    Add employee
+</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+                folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+        <!-- iCheck -->
+        <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+        <!-- Morris chart -->
+        <link rel="stylesheet" href="plugins/morris/morris.css">
+        <!-- jvectormap -->
+        <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+        <!-- Date Picker -->
+        <link href="plugins/datepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+        <link rel="stylesheet" href="plugins/dataTables/jquery.dataTables.min.css">  
+        <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    </head>
+
+    <body class="hold-transition skin-blue fixed sidebar-mini">
+
+        <div class="wrapper">
+
+            
+                <!-- start header -->
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="/dist/img/" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><b>ERIS</b></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><b>ERIS</b></span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- User Account: style can be found in dropdown.less -->
+                            <li class="dropdown user user-menu" style="padding-right: 15px;"  >
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="dist/img/user/photos/Koala.jpg" class="user-image" alt="User Image">
+                                    <span class="hidden-xs">Héritier</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header"> 
+                                        <img data-target="#menuModal"  data-toggle="modal"  src="dist/img/user/photos/Koala.jpg" class="img-circle" alt="User Image" />  
+                                    </li> 
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="admin/userprofile" class="btn btn-default btn-flat">Profile</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="" class="btn btn-default btn-flat">Sign out</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Control Sidebar Toggle Button -->
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- end header -->
+
+            <!-- start modal -->
+            <div class="modal fade" id="menuModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal" type=
+                            "button">x</button>
+
+                            <h4 class="modal-title" id="myModalLabel">Image.</h4>
+                        </div>
+
+                        <form action="" method="post">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <div class="rows">
+                                        <div class="col-md-12">
+                                            <div class="rows">
+                                                <div class="col-md-8">
+                                                    <input id="photo" name="photo" type="file">
+                                                </div>
+                                                <div class="col-md-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button class="btn btn-default" data-dismiss="modal" type=
+                                "button">Close</button> <button class="btn btn-primary"
+                                name="savephoto" type="submit">Upload Photo</button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content-->
+                </div>
+            </div>
+            <!-- end modal -->
+
+            <!-- left sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu"> 
+                        <li  class="" >
+                            <a href="admin">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>  
+                            </a> 
+                        </li> 
+                        <li class="" >
+                            <a href="admin/companies">
+                                <i class="fa fa-building"></i> <span>Company</span> 
+                            </a>
+                        </li>
+                        <li class="" >
+                            <a href="admin/vacancies">
+                                <i class="fa fa-suitcase"></i> <span>Vacancy</span> 
+                            </a>
+                        </li>
+                        <li class="active" >
+                            <a href="admin/employees">
+                                <i class="fa fa-users"></i> <span>Employee</span> 
+                            </a>
+                        </li> 
+                        <li class="" > 
+                            <a href="admin/applicants">
+                                <i class="fa fa-users"></i>
+                                <span>Applicants</span> 
+                                <span class="label label-primary pull-right">0</span>
+                            </a>
+                        </li> 
+                        <li class="" > 
+                            <a href="admin/categories">
+                                <i class="fa fa-list"></i> <span>Category</span>  
+                            </a>
+                        </li>      
+                        <li class="">
+                            <a href="admin/users">
+                                <i class="fa fa-user"></i> <span>Manage Users</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+            <!-- end sidebar -->            
+
+            <!-- start content -->
+                <div class="content-wrapper">
+    <section class="content-header">
+        <h1>Employees</h1>
+        <ol class="breadcrumb">
+            <li><a href="admin"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li class=><a href="admin/addemployee">Employees</a></li><li class="active">add</li>      
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body">
+                                                <section id="feature" class="transparent-bg">
+                            <div class="container">
+                                <div class="center wow fadeInDown">
+                                    <h2 class="page-header">Add New Employee</h2>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="features">
+                                        <form class="form-horizontal span6  wow fadeInDown" action="admin/saveemployee " method="POST">
+                                            <input type="hidden" name="_token" value="Nlnz4RR81OkM5thtNt1eIPiOup05KoiKdN3rY7OA">
+                                            <div class="form-group">
+                                                <div class="col-md-8">
+                                                <label class="col-md-4 control-label" for=
+                                                "EMPLOYEEID">Employee ID:</label>
+
+                                                    <div class="col-md-8">
+                                                        <input class="form-control input-sm" id="EMPLOYEEID" name="empid" placeholder=
+                                                        "Employee ID" type="text" value="" required>
+                                                    </div>
+                                                </div>
+                                            </div>           
+                                            <div class="form-group">
+                                            <div class="col-md-8">
+                                            <label class="col-md-4 control-label" for=
+                                            "FNAME">Firstname:</label>
+
+                                            <div class="col-md-8">
+                                                <input class="form-control input-sm" id="FNAME" name="firstname" placeholder=
+                                                    "Firstname" type="text" value=""   autocomplete="off" required>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-8">
+                                            <label class="col-md-4 control-label" for=
+                                            "LNAME">Lastname:</label>
+
+                                            <div class="col-md-8">
+                                                <input  class="form-control input-sm" id="LNAME" name="lastname" placeholder="Lastname"     autocomplete="off" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-8">
+                                                <label class="col-md-4 control-label" for="MNAME">Middle Name:</label>
+
+                                                <div class="col-md-8">
+                                                    <input  class="form-control input-sm" id="MNAME" name="middlename" placeholder=
+                                                        "Middle Name"     autocomplete="off" required>
+                                                </div>
+                                            </div>
+                                        </div> 
+
+                                        <div class="form-group">
+                                        <div class="col-md-8">
+                                            <label class="col-md-4 control-label" for=
+                                            "ADDRESS">Address:</label>
+
+                                            <div class="col-md-8">
+                                            
+                                                <textarea class="form-control input-sm" id="ADDRESS" name="address" placeholder=
+                                                "Address" type="text" value="" required   autocomplete="off"></textarea>
+                                            </div>
+                                        </div>
+                                        </div> 
+
+                                        <div class="form-group">
+                                        <div class="col-md-8">
+                                            <label class="col-md-4 control-label" for=
+                                            "Gender">Sex:</label>
+
+                                            <div class="col-md-8">
+                                                <div class="col-lg-5">
+                                                <div class="radio">
+                                                    <label><input checked id="optionsRadios1" checked="True" name="gender" type="radio" value="Female">Female</label>
+                                                </div>
+                                                </div>
+
+                                                <div class="col-lg-4">
+                                                <div class="radio">
+                                                    <label><input id="optionsRadios2"   name="gender" type="radio" value="Male"> Male</label>
+                                                </div>
+                                                </div> 
+                                                
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                                <div class="form-group">
+                                                <div class="col-md-8">
+                                                    <label class="col-md-4 control-label" for=
+                                                    "BIRTHDATE">Date of Birth:</label>
+
+                                                    <div class="col-md-8">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"> 
+                                                            <i class="fa fa-calendar"></i> 
+                                                        </span>  
+                                                        <input class="form-control input-sm date_picker" id="BIRTHDATE" name="birthday" placeholder="Date of Birth" type="text"    value="" required  autocomplete="off">
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+
+                                                    <div class="form-group">
+                                                    <div class="col-md-8">
+                                                        <label class="col-md-4 control-label" for=
+                                                        "BIRTHPLACE">Place of Birth:</label>
+
+                                                        <div class="col-md-8">
+                                                        
+                                                            <textarea class="form-control input-sm" id="BIRTHPLACE" name="birthplace" placeholder=
+                                                            "Place of Birth" type="text" value="" required   autocomplete="off"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    </div> 
+
+
+                                                    <div class="form-group">
+                                                    <div class="col-md-8">
+                                                    <label class="col-md-4 control-label" for=
+                                                    "TELNO">Contact No.:</label>
+
+                                                    <div class="col-md-8">
+                                                        
+                                                        <input class="form-control input-sm" id="TELNO" name="phone" placeholder=
+                                                            "Contact No." type="text" any value="" required   autocomplete="off">
+                                                    </div>
+                                                    </div>
+                                                </div> 
+
+                                                    <div class="form-group">
+                                                    <div class="col-md-8">
+                                                    <label class="col-md-4 control-label" for=
+                                                    "CIVILSTATUS">Civil Status:</label>
+
+                                                    <div class="col-md-8">
+                                                        <select class="form-control input-sm" name="civilstatus" id="CIVILSTATUS" required>
+                                                            <option value="" >Select</option>
+                                                            <option value="Single">Single</option>
+                                                            <option value="Married">Married</option>
+                                                            <option value="Widow" >Widow</option>
+                                                        </select> 
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-8">
+                                                    <label class="col-md-4 control-label" for=
+                                                    "POSITION">Postion:</label>
+
+                                                    <div class="col-md-8">
+                                                        
+                                                        <input class="form-control input-sm" id="POSITION" name="position" placeholder=
+                                                            "Postion" type="text" any value="" required   autocomplete="off">
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-8">
+                                                    <label class="col-md-4 control-label" for=
+                                                    "EMP_HIREDDATE">Hired Date:</label> 
+                                                    <div class="col-md-8">
+                                                        <div class="input-group date" data-provide="datepicker" data-date="2012-12-21T15:25:00Z">
+                                                            <input type="input" class="form-control input-sm date_picker" id="HIREDDATE" name="hireddate" value="" placeholder="hired date" required>
+                                                            <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>  
+
+
+                                                    <div class="form-group">
+                                                    <div class="col-md-8">
+                                                    <label class="col-md-4 control-label" for=
+                                                    "EMP_EMAILADDRESS">Email Address:</label> 
+                                                    <div class="col-md-8">
+                                                        <input type="Email" class="form-control input-sm" id="EMP_EMAILADDRESS" name="email" placeholder="Email Address"   autocomplete="false" required/> 
+                                                    </div>
+                                                    </div>
+                                                </div>  
+
+                                                <div class="form-group">
+                                                    <div class="col-md-8">
+                                                        <label class="col-md-4 control-label" for=
+                                                        "COMPANYNAME">Company Name:</label>
+
+                                                        <div class="col-md-8">
+                                                        <select class="form-control input-sm" id="COMPANYID" name="companyname" required>
+                                                            <option value="">Select</option>
+                                                                                                                            <option value="Copreros">Copreros</option>
+                                                                                                                            <option value="URC">URC</option>
+                                                                                                                            <option value="Quest">Quest</option>
+                                                                                                                            <option value="Palacios Company">Palacios Company</option>
+                                                                                                                            <option value="IT Company">IT Company</option>
+                                                                                                                        
+                                                        </select>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+
+                                                <div class="form-group">
+                                                    <div class="col-md-8">
+                                                        <label class="col-md-4 control-label" for=
+                                                        "idno"></label>  
+
+                                                        <div class="col-md-8">
+                                                            <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span> Save</button>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                        </form>
+                                    </div><!--/.services-->
+                                </div><!--/.row--> 
+                            </div><!--/.container-->
+                        </section><!--/#feature-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+            <!-- end content -->
+
+            <!-- start footer -->
+                <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <b>Version</b> 2.3.2
+    </div>
+    <strong>Copyright &copy; 2021 <a href="#">CampCodes</a>.</strong> All rights
+    reserved.
+</footer>            <!-- end footer -->
+
+        </div>
+            
+                <script type="text/javascript" src="plugins/jQuery/jQuery-2.1.4.min.js"> </script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js" ></script>
+<script src="dist/js/app.min.js"></script> 
+
+<script type="text/javascript" src="plugins/datepicker/bootstrap-datepicker.js" ></script> 
+<script type="text/javascript" src="plugins/datepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="plugins/datepicker/locales/bootstrap-datetimepicker.uk.js" charset="UTF-8"></script>
+
+<script type="text/javascript" src="plugins/dataTables/dataTables.bootstrap.min.js" ></script> 
+<script src="plugins/datatables/jquery.dataTables.min.js"></script> 
+
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+
+<script type="text/javascript" language="javascript" src="plugins/input-mask/jquery.inputmask.js"></script> 
+<script type="text/javascript" language="javascript" src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script> 
+<script type="text/javascript" language="javascript" src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
+<script>
+    $(function () {
+        $("#dash-table").DataTable();
+        $('#dash-table2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false
+        });
+    });
+
+    $('input[data-mask]').each(function() {
+    var input = $(this);
+    input.setMask(input.data('mask'));
+    });
+
+
+    $('#BIRTHDATE').inputmask({
+        mask: "2/1/y",
+        placeholder: "mm/dd/yyyy",
+        alias: "date",
+        hourFormat: "24"
+    });
+
+    $('#HIREDDATE').inputmask({
+        mask: "2/1/y",
+        placeholder: "mm/dd/yyyy",
+        alias: "date",
+        hourFormat: "24"
+    });
+
+    $('.date_picker').datetimepicker({
+        format: 'mm/dd/yyyy',
+        startDate : '01/01/1950', 
+        language:  'en',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1, 
+        startView: 2,
+        minView: 2,
+        forceParse: 0 
+    });
+</script>            
+    </body>
+    
+</html>
