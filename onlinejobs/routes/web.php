@@ -41,6 +41,18 @@ Route::get('/jobbycompany', function(){
     return view('front.jobbycompany');
 })->name('jobbycompany');
 
+Route::get('/jobbycompany', function(){
+    return view('front.jobbycompany');
+})->name('jobbycompany');
+
+Route::get('/jobbycompany/{id}', function(){
+    return view('front.hiringcompany');
+})->name('hiringcompany');
+
+Route::get('/jobdetails/{id}', function(){
+    return view('front.jobdetails');
+})->name('jobdetails');
+
 Route::get('/jobbyfunction', function(){
     return view('front.jobbyfunction');
 })->name('jobbyfunction');
@@ -48,3 +60,11 @@ Route::get('/jobbyfunction', function(){
 Route::get('/jobbytitle', function(){
     return view('front.jobbytitle');
 })->name('jobbytitle');
+
+Route::get('/jobbycategory', function(){
+    return view('front.jobbycategory');
+})->name('jobbycategory');
+
+Route::get('/submitapp', function(){
+    return view('front.submit');
+})->name('submitapp');

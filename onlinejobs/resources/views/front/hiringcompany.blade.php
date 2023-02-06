@@ -1,7 +1,7 @@
 @extends('front.template.index')
 
 @section('title')
-    Hiring Now
+    Hiring Company
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="pageTitle">Hiring</h2>
+                <h2 class="pageTitle">Hiring In URC</h2>
             </div>
         </div>
     </div>
@@ -27,23 +27,11 @@
             </thead>
             <tbody>
                                     <tr>
-                        <td><a href={{ route('jobdetails', 2)}}>Developer</a></td>
+                        <td><a href={{ route('jobdetails', 1)}}>Developer</a></td>
                         <td>URC</td>
                         <td>Bry Camugao</td>
                         <td>2022-07-26 02:15:02</td>
-                    </tr>  
-                                    <tr>
-                        <td><a href={{ route('jobdetails', 3)}}>IT Manager</a></td>
-                        <td>Quest</td>
-                        <td>Kabankalan City</td>
-                        <td>2022-07-27 01:22:00</td>
-                    </tr>  
-                                    <tr>
-                        <td><a href={{ route('jobdetails', 4)}}>Digital Marketer</a></td>
-                        <td>Copreros</td>
-                        <td>Mabinay&#039;s</td>
-                        <td>2022-07-27 01:23:11</td>
-                    </tr>  
+                    </tr>
                 
             </tbody>
         </table>   

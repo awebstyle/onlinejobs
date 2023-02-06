@@ -1,7 +1,7 @@
 @extends('front.template.index')
 
 @section('title')
-    Search by Company
+    Search by Title
 @endsection
 
 @section('content')
