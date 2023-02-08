@@ -29,7 +29,7 @@
                                 "FNAME">Firstname:</label>
                         
                                 <div class="col-md-8">
-                                    <input class="form-control input-sm" id="FNAME" name="firstname" placeholder="Firstname" type="text" value="Héritier" autocomplete="off" readonly>
+                                    <input class="form-control input-sm" id="FNAME" name="firstname" placeholder="Firstname" type="text" value="Gisèle" autocomplete="off" readonly>
                                 </div>
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                                 "LNAME">Lastname:</label>
                         
                                 <div class="col-md-8">
-                                    <input  class="form-control input-sm" id="LNAME" name="lastname" placeholder="Lastname" value="N&#039;kele"  autocomplete="off" readonly>
+                                    <input  class="form-control input-sm" id="LNAME" name="lastname" placeholder="Lastname" value="Bastin"  autocomplete="off" readonly>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                         
                                 <div class="col-md-8">
                                     <input  class="form-control input-sm" id="MNAME" name="middlename" placeholder=
-                                    "Middle Name" value="Nkele" autocomplete="off" readonly>
+                                    "Middle Name" value="" autocomplete="off" readonly>
                                 </div>
                             </div>
                         </div> 
@@ -64,7 +64,7 @@
                         
                                 <div class="col-md-8">
                                     <textarea class="form-control input-sm" id="ADDRESS" name="address" placeholder=
-                                    "Address" type="text" value="" readonly autocomplete="off">Av. Malula num 12 Lemba/Righini</textarea>
+                                    "Address" type="text" value="" readonly autocomplete="off">Coding avenue, 4</textarea>
                                 </div>
                             </div>
                         </div> 
@@ -76,13 +76,13 @@
                                                                 <div class="col-md-8">
                                         <div class="col-lg-5">
                                             <div class="radio">
-                                            <label><input id="optionsRadios1"  name="gender" type="radio" value="Female" readonly>Female</label>
+                                            <label><input id="optionsRadios1"  checked="true" name="gender" type="radio" value="Female" readonly>Female</label>
                                             </div>
                                         </div>
                                 
                                         <div class="col-lg-4">
                                             <div class="radio">
-                                            <label><input id="optionsRadios2" checked="true"   name="gender" type="radio" value="Male" readonly> Male</label>
+                                            <label><input id="optionsRadios2"   name="gender" type="radio" value="Male" readonly> Male</label>
                                             </div>
                                         </div> 
                                     </div> 
@@ -109,7 +109,7 @@
                                 "BIRTHPLACE">Place of Birth:</label>
                         
                                 <div class="col-md-8">
-                                    <textarea class="form-control input-sm" id="BIRTHPLACE" name="birthplace" placeholder="Place of Birth" type="text" autocomplete="off" readonly>Matadi
+                                    <textarea class="form-control input-sm" id="BIRTHPLACE" name="birthplace" placeholder="Place of Birth" type="text" autocomplete="off" readonly>A town in Belgium
                                     </textarea>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                                 <label class="col-md-4 control-label" for=
                                 "EMAILADDRESS">Email Address:</label> 
                                 <div class="col-md-8">
-                                    <input type="email" class="form-control input-sm" id="EMAILADDRESS" name="email" placeholder="Email Address"   autocomplete="false" value="nkeleheir@gmail.com" readonly/> 
+                                    <input type="email" class="form-control input-sm" id="EMAILADDRESS" name="email" placeholder="Email Address"   autocomplete="false" value="admin@gmail.com" readonly/> 
                                 </div>
                             </div>
                         </div>  
@@ -156,7 +156,7 @@
                                 "USERNAME">Username:</label>
                             
                                 <div class="col-md-8">
-                                    <input  class="form-control input-sm" id="USERNAME" name="username" placeholder="Username" value="héritier" autocomplete="off" readonly>
+                                    <input  class="form-control input-sm" id="USERNAME" name="username" placeholder="Username" value="gisele" autocomplete="off" readonly>
                                 </div>
                             </div>
                         </div>

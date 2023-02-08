@@ -68,3 +68,28 @@ Route::get('/jobbycategory', function(){
 Route::get('/submitapp', function(){
     return view('front.submit');
 })->name('submitapp');
+
+
+Route::get('/register', function(){
+    return view('front.register');
+})->name('register');
+
+Route::get('/profile', function(){
+    return view('front.profile');
+})->name('profile');
+
+Route::get('/profile/message', function(){
+    return view('front.message');
+})->name('profilemessage');
+
+Route::get('/profile/message/{id}', function(){
+    return view('front.readmessage');
+})->name('readmessage');
+
+Route::get('/profile/appliedjob', function(){
+    return view('front.appliedjob');
+})->name('appliedjob');
+
+/* Route::get('/openmodal', function(){
+    return view('front.template.partials._modal');
+})->name('openmodal'); */

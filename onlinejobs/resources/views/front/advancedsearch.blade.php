@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="pageTitle">Advance Search</h2>
+                    <h2 class="pageTitle">Advanced Search</h2>
                 </div>
             </div>
         </div>
