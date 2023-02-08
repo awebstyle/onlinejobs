@@ -18,18 +18,18 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu" style="padding-right: 15px;"  >
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="dist/img/user/photos/Koala.jpg" class="user-image" alt="User Image">
+                        <img src={{ asset("dist/img/user/photos/Koala.jpg") }} class="user-image" alt="User Image">
                         <span class="hidden-xs">Héritier</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header"> 
-                            <img data-target="#menuModal"  data-toggle="modal"  src="dist/img/user/photos/Koala.jpg" class="img-circle" alt="User Image" />  
+                            <img data-target="#menuModal"  data-toggle="modal"  src={{ asset("dist/img/user/photos/Koala.jpg") }} class="img-circle" alt="User Image" />  
                         </li> 
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="admin/userprofile" class="btn btn-default btn-flat">Profile</a>
+                                <a href={{ route('userprofile') }} class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
                                 <a href="" class="btn btn-default btn-flat">Sign out</a>
