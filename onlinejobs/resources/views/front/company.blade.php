@@ -19,16 +19,18 @@
         <div class="container content">     
             <!-- Service Blcoks -->  
             <div class="row">
+                @foreach($companies as $company)
                     <div class="col-sm-4 info-blocks">
                         <i class="icon-info-blocks fa fa-building-o"></i>
                         <div class="info-blocks-in">
                             {{-- <h3><a href={{ route('/jobbycompany', [$company->id]) }}>Copreros</a></h3> --}}
-                            <h3><a href={{ route('hiringcompany', 1) }}>Copreros</a></h3>
+                            <h3><a href={{ route('hiringcompany', [$company->id]) }}>{{ $company->name }}</a></h3>
                             <!-- <p>weqwe</p> -->
-                            <p>Address :Mabinay&#039;s</p>
-                            <p>Contact No. :03565</p>
+                            <p>Address : {{ $company->address }}</p>
+                            <p>Contact No. : {{ $company->contact }}</p>
                         </div>
                     </div>
+                @endforeach
             </div> 
         </div>
     </section> 

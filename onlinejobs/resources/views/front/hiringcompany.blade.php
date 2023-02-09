@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="pageTitle">Hiring In URC</h2>
+                <h2 class="pageTitle">Hiring In {{ $company->name }}</h2>
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@
 
 <section id="content">
     <div class="container content">     
-        <!-- Service Blcoks -->    
+        <!-- Service Blocks -->    
         <table id="dash-table" class="table table-hover">
             <thead>
                 <th>Job Title</th>

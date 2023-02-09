@@ -8,8 +8,8 @@
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>  
                 </a> 
             </li> 
-            <li class="{{ request()->is('admincompanies') || request()->is('addcompany') ? 'active' : ''}}" >
-                <a href={{ route('admincompanies')}}>
+            <li class="{{ request()->is('companies.index') || request()->is('addcompany') ? 'active' : ''}}" >
+                <a href={{ route('companies.index')}}>
                     <i class="fa fa-building"></i> <span>Company</span> 
                 </a>
             </li>

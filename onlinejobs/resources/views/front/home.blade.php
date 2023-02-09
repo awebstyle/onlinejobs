@@ -48,56 +48,18 @@
                     <br/>
                 </div>
             </div>
-
-                            <div class="col-sm-4 info-blocks">
-                    <i class="icon-info-blocks fa fa-building-o"></i>
-                    <div class="info-blocks-in">
-                        <h3>Copreros</h3>
-                        <!-- <p>weqwe</p> -->
-                        <p>Address :Mabinay&#039;s</p>
-                        <p>Contact No. :03565</p>
+                @foreach($companies as $company)
+                    <div class="col-sm-4 info-blocks">
+                        <i class="icon-info-blocks fa fa-building-o"></i>
+                        <div class="info-blocks-in">
+                            <h3>{{ $company->name }}</h3>
+                            <!-- <p>weqwe</p> -->
+                            <p>Address : {{ $company->address }}</p>
+                            <p>Contact No. : {{ $company->contact }}</p>
+                        </div>
                     </div>
-                </div>
-                            <div class="col-sm-4 info-blocks">
-                    <i class="icon-info-blocks fa fa-building-o"></i>
-                    <div class="info-blocks-in">
-                        <h3>URC</h3>
-                        <!-- <p>weqwe</p> -->
-                        <p>Address :Bry Camugao</p>
-                        <p>Contact No. :023654</p>
-                    </div>
-                </div>
-                            <div class="col-sm-4 info-blocks">
-                    <i class="icon-info-blocks fa fa-building-o"></i>
-                    <div class="info-blocks-in">
-                        <h3>Quest</h3>
-                        <!-- <p>weqwe</p> -->
-                        <p>Address :Kabankalan City</p>
-                        <p>Contact No. :23165</p>
-                    </div>
-                </div>
-                            <div class="col-sm-4 info-blocks">
-                    <i class="icon-info-blocks fa fa-building-o"></i>
-                    <div class="info-blocks-in">
-                        <h3>IT Company</h3>
-                        <!-- <p>weqwe</p> -->
-                        <p>Address :Kabankalan City</p>
-                        <p>Contact No. :04564123</p>
-                    </div>
-                </div>
-                            <div class="col-sm-4 info-blocks">
-                    <i class="icon-info-blocks fa fa-building-o"></i>
-                    <div class="info-blocks-in">
-                        <h3>Palacios Company</h3>
-                        <!-- <p>weqwe</p> -->
-                        <p>Address :Kabankalan City</p>
-                        <p>Contact No. :0625656899</p>
-                    </div>
-                </div>
-            
-
-
-        </div>
+                @endforeach
+            </div>
     </section>
 
     <section class="section-padding gray-bg">

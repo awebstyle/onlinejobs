@@ -21,21 +21,17 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-body">         
-              <form class="form-horizontal span6" action={{ route('companies.store') }} method="POST">
+              <form class="form-horizontal span6" action={{ route('companies.update', $company->id) }} method="POST">
                 @csrf
-                  
+                @method('put')
                   <div class="row">
                     <div class="col-lg-12">
-                      <h1 class="page-header">Add New Company</h1>
+                      <h1 class="page-header">Edit Company</h1>
                     </div>
                   </div> 
                   <br>
 
-                  @if(Session::has('status'))
-                    <div class="alert alert-success">
-                      {{ Session::get('status') }}
-                    </div>
-                  @endif                  
+                               
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
@@ -43,7 +39,7 @@
 
                       <div class="col-md-8">
                         <input class="form-control input-sm" id="COMPANYNAME" placeholder=
-                            "Company Name" type="text" value="" autocomplete="none" name="name" required>
+                            "Company Name" type="text" value="{{ $company->name }}" autocomplete="none" name="name" required>
                       </div>
                     </div>
                   </div>
@@ -54,7 +50,7 @@
                       <label class="col-md-4 control-label" for=
                       "COMPANYADDRESS">Company Address:</label> 
                       <div class="col-md-8">
-                        <textarea class="form-control input-sm" id="COMPANYADDRESS" placeholder="Company Address" type="text" value="" required  onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off" name="address"></textarea>
+                        <textarea class="form-control input-sm" id="COMPANYADDRESS" placeholder="Company Address" type="text" value="" required  onkeyup="javascript:capitalize(this.id, this.value);" autocomplete="off" name="address">{{ $company->address }}</textarea>
                       </div>
                     </div>
                   </div> 
@@ -66,7 +62,7 @@
 
                       <div class="col-md-8">
                         <input class="form-control input-sm" id="COMPANYCONTACTNO" placeholder=
-                            "Company Contact No." type="text" value="" autocomplete="none"   name="contact" required>
+                            "Company Contact No." type="text" value="{{ $company->contact }}" autocomplete="none"   name="contact" required>
                       </div>
                     </div>
                   </div>  
@@ -77,7 +73,7 @@
                       "idno"></label>  
 
                       <div class="col-md-8">
-                        <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span> Save</button>
+                        <button class="btn btn-primary btn-sm" name="update" type="submit" ><span class="fa fa-save fw-fa"></span> Update</button>
                     </div>
                     </div>
                   </div> 

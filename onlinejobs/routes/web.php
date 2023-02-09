@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\CompaniesController;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front.home');
-})->name('home');
-
 Route::get('/about', function(){
     return view('front.about');
 })->name('about');
@@ -25,9 +23,10 @@ Route::get('/advancedsearch', function(){
     return view('front.advancedsearch');
 })->name('advancedsearch');
 
-Route::get('/company', function(){
-    return view('front.company');
-})->name('company');
+Route::get('/', [FrontController::class, 'home'])->name('home');
+Route::get('/company', [FrontController::class, 'showCompanies'])->name('company');
+Route::get('/jobbycompany/{id}', [FrontController::class, 'hiringCompany'])->name('hiringcompany');
+
 
 Route::get('/contactus', function(){
     return view('front.contactus');
@@ -45,9 +44,7 @@ Route::get('/jobbycompany', function(){
     return view('front.jobbycompany');
 })->name('jobbycompany');
 
-Route::get('/jobbycompany/{id}', function(){
-    return view('front.hiringcompany');
-})->name('hiringcompany');
+
 
 Route::get('/jobdetails/{id}', function(){
     return view('front.jobdetails');
@@ -94,9 +91,9 @@ Route::get('/admin', function(){
     return view('admin.dashboard');
 })->name('adminhome');
 
-Route::get('/admin/companies', function(){
+/* Route::get('/admin/companies', function(){
     return view('admin.companies');
-})->name('admincompanies');
+})->name('admincompanies'); */
 
 Route::get('/admin/vacancies', function(){
     return view('admin.vacancies');
@@ -118,9 +115,9 @@ Route::get('/admin/users', function(){
     return view('admin.users');
 })->name('adminusers');
 
-Route::get('/admin/addcompany', function(){
+/* Route::get('/admin/addcompany', function(){
     return view('admin.addcompany');
-})->name('addcompany');
+})->name('addcompany'); */
 
 Route::get('/admin/addvacancy', function(){
     return view('admin.addvacancy');
@@ -142,6 +139,4 @@ Route::get('/admin/userprofile', function(){
     return view('admin.userprofile');
 })->name('userprofile');
 
-/* Route::get('/openmodal', function(){
-    return view('front.template.partials._modal');
-})->name('openmodal'); */
+Route::resource('companies', CompaniesController::class);
