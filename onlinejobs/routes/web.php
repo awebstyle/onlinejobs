@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CompaniesController;
+use App\Http\Controllers\Admin\EmployeesController;
 use App\Http\Controllers\FrontController;
 
 /*
@@ -99,9 +100,9 @@ Route::get('/admin/vacancies', function(){
     return view('admin.vacancies');
 })->name('adminvacancies');
 
-Route::get('/admin/employees', function(){
+/* Route::get('/admin/employees', function(){
     return view('admin.employees');
-})->name('adminemployees');
+})->name('adminemployees'); */
 
 Route::get('/admin/applicants', function(){
     return view('admin.applicants');
@@ -123,9 +124,9 @@ Route::get('/admin/addvacancy', function(){
     return view('admin.addvacancy');
 })->name('addvacancy');
 
-Route::get('/admin/addemployee', function(){
+/* Route::get('/admin/addemployee', function(){
     return view('admin.addemployee');
-})->name('addemployee');
+})->name('addemployee'); */
 
 Route::get('/admin/addcategory', function(){
     return view('admin.addcategory');
@@ -140,3 +141,4 @@ Route::get('/admin/userprofile', function(){
 })->name('userprofile');
 
 Route::resource('companies', CompaniesController::class);
+Route::resource('employees', EmployeesController::class);

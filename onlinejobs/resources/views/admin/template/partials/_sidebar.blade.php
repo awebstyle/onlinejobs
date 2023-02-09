@@ -18,8 +18,8 @@
                     <i class="fa fa-suitcase"></i> <span>Vacancy</span> 
                 </a>
             </li>
-            <li class="{{ request()->is('adminemployees') || request()->is('addemployee') ? 'active' : ''}}" >
-                <a href={{ route('adminemployees') }}>
+            <li class="{{ request()->is('employees.index') || request()->is('addemployee') ? 'active' : ''}}" >
+                <a href={{ route('employees.index') }}>
                     <i class="fa fa-users"></i> <span>Employee</span> 
                 </a>
             </li> 

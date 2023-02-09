@@ -1,7 +1,7 @@
 @extends('admin.template.index')
 
 @section('title')
-    Add employee
+    Edit employee
 @endsection
 
 @section('content')
@@ -21,18 +21,15 @@
                         <section id="feature" class="transparent-bg">
                             <div class="container">
                                 <div class="center wow fadeInDown">
-                                    <h2 class="page-header">Add New Employee</h2>
+                                    <h2 class="page-header">Edit Employee</h2>
                                 </div>
                                 <br>
-                                @if(Session::has('status'))
-                                    <div class="alert alert-success">
-                                        {{ Session::get('status') }}
-                                    </div>
-                                @endif
+                                
                                 <div class="row">
                                     <div class="features">
-                                        <form class="form-horizontal span6  wow fadeInDown" action={{ route('employees.store') }} method="POST">
+                                        <form class="form-horizontal span6  wow fadeInDown" action={{ route('employees.update', $employee->id) }} method="POST">
                                             @csrf
+                                            @method('put')
                                             <div class="form-group">
                                                 <div class="col-md-8">
                                                 <label class="col-md-4 control-label" for=
@@ -40,7 +37,7 @@
 
                                                     <div class="col-md-8">
                                                         <input class="form-control input-sm" id="EMPLOYEEID" name="empid" placeholder=
-                                                        "Employee ID" type="text" value="" required>
+                                                        "Employee ID" type="text" value="{{ $employee->empid }}" required>
                                                     </div>
                                                 </div>
                                             </div>           
@@ -51,7 +48,7 @@
 
                                             <div class="col-md-8">
                                                 <input class="form-control input-sm" id="FNAME" name="firstname" placeholder=
-                                                    "Firstname" type="text" value=""   autocomplete="off" required>
+                                                    "Firstname" type="text" value="{{ $employee->firstname }}"   autocomplete="off" required>
                                             </div>
                                             </div>
                                         </div>
@@ -62,7 +59,7 @@
                                             "LNAME">Lastname:</label>
 
                                             <div class="col-md-8">
-                                                <input  class="form-control input-sm" id="LNAME" name="lastname" placeholder="Lastname"     autocomplete="off" required>
+                                                <input  class="form-control input-sm" id="LNAME" name="lastname" placeholder="Lastname"  value="{{ $employee->lastname }}"   autocomplete="off" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -72,8 +69,7 @@
                                                 <label class="col-md-4 control-label" for="MNAME">Middle Name:</label>
 
                                                 <div class="col-md-8">
-                                                    <input  class="form-control input-sm" id="MNAME" name="middlename" placeholder=
-                                                        "Middle Name"     autocomplete="off" required>
+                                                    <input  class="form-control input-sm" id="MNAME" name="middlename" placeholder="Middle Name" value="{{ $employee->middlename }}"    autocomplete="off" required>
                                                 </div>
                                             </div>
                                         </div> 
@@ -86,7 +82,7 @@
                                             <div class="col-md-8">
                                             
                                                 <textarea class="form-control input-sm" id="ADDRESS" name="address" placeholder=
-                                                "Address" type="text" value="" required   autocomplete="off"></textarea>
+                                                "Address" type="text" value="{{ $employee->address }}" required   autocomplete="off">{{ $employee->address }}</textarea>
                                             </div>
                                         </div>
                                         </div> 
@@ -95,21 +91,38 @@
                                         <div class="col-md-8">
                                             <label class="col-md-4 control-label" for=
                                             "Gender">Sex:</label>
+                                            @if($employee->gender === 'Female')
+                                                <div class="col-md-8">
+                                                    <div class="col-lg-5">
+                                                    <div class="radio">
+                                                        <label><input checked id="optionsRadios1" checked="True" name="gender" type="radio" value="Female">Female</label>
+                                                    </div>
+                                                    </div>
 
-                                            <div class="col-md-8">
-                                                <div class="col-lg-5">
-                                                <div class="radio">
-                                                    <label><input checked id="optionsRadios1" checked="True" name="gender" type="radio" value="Female">Female</label>
+                                                    <div class="col-lg-4">
+                                                    <div class="radio">
+                                                        <label><input id="optionsRadios2"   name="gender" type="radio" value="Male"> Male</label>
+                                                    </div>
+                                                    </div> 
+                                                    
                                                 </div>
-                                                </div>
+                                            @else
+                                                <div class="col-md-8">
+                                                    <div class="col-lg-5">
+                                                    <div class="radio">
+                                                        <label><input id="optionsRadios1" name="gender" type="radio" value="Female">Female</label>
+                                                    </div>
+                                                    </div>
 
-                                                <div class="col-lg-4">
-                                                <div class="radio">
-                                                    <label><input id="optionsRadios2"   name="gender" type="radio" value="Male"> Male</label>
+                                                    <div class="col-lg-4">
+                                                    <div class="radio">
+                                                        <label><input checked id="optionsRadios2" checked="True"   name="gender" type="radio" value="Male"> Male</label>
+                                                    </div>
+                                                    </div> 
+                                                    
                                                 </div>
-                                                </div> 
                                                 
-                                            </div>
+                                            @endif
                                         </div>
                                         </div>
 
@@ -123,7 +136,7 @@
                                                         <span class="input-group-addon"> 
                                                             <i class="fa fa-calendar"></i> 
                                                         </span>  
-                                                        <input class="form-control input-sm date_picker" id="BIRTHDATE" name="birthday" placeholder="Date of Birth" type="text"    value="" required  autocomplete="off">
+                                                        <input class="form-control input-sm date_picker" id="BIRTHDATE" name="birthday" placeholder="Date of Birth" type="text"    value="{{ $employee->birthday }}" required  autocomplete="off">
                                                     </div>
                                                     </div>
                                                 </div>
@@ -137,7 +150,7 @@
                                                         <div class="col-md-8">
                                                         
                                                             <textarea class="form-control input-sm" id="BIRTHPLACE" name="birthplace" placeholder=
-                                                            "Place of Birth" type="text" value="" required   autocomplete="off"></textarea>
+                                                            "Place of Birth" type="text" value="{{ $employee->birthplace }}" required   autocomplete="off">{{ $employee->birthplace }}</textarea>
                                                         </div>
                                                     </div>
                                                     </div> 
@@ -151,7 +164,7 @@
                                                     <div class="col-md-8">
                                                         
                                                         <input class="form-control input-sm" id="TELNO" name="phone" placeholder=
-                                                            "Contact No." type="text" any value="" required   autocomplete="off">
+                                                            "Contact No." type="text" any value="{{ $employee->phone }}" required   autocomplete="off">
                                                     </div>
                                                     </div>
                                                 </div> 
@@ -163,7 +176,7 @@
 
                                                     <div class="col-md-8">
                                                         <select class="form-control input-sm" name="civilstatus" id="CIVILSTATUS" required>
-                                                            <option value="" >Select</option>
+                                                            <option value="{{ $employee->civilstatus }}" >{{ $employee->civilstatus }}</option>
                                                             <option value="Single">Single</option>
                                                             <option value="Married">Married</option>
                                                             <option value="Widow" >Widow</option>
@@ -180,7 +193,7 @@
                                                     <div class="col-md-8">
                                                         
                                                         <input class="form-control input-sm" id="POSITION" name="position" placeholder=
-                                                            "Postion" type="text" any value="" required   autocomplete="off">
+                                                            "Postion" type="text" any value="{{ $employee->position }}" required   autocomplete="off">
                                                     </div>
                                                     </div>
                                                 </div>
@@ -191,7 +204,7 @@
                                                     "EMP_HIREDDATE">Hired Date:</label> 
                                                     <div class="col-md-8">
                                                         <div class="input-group date" data-provide="datepicker" data-date="2012-12-21T15:25:00Z">
-                                                            <input type="input" class="form-control input-sm date_picker" id="HIREDDATE" name="hireddate" value="" placeholder="hired date" required>
+                                                            <input type="input" class="form-control input-sm date_picker" id="HIREDDATE" name="hireddate" value="{{ $employee->hireddate }}" placeholder="hired date" required>
                                                             <span class="input-group-addon"><i class="fa fa-th"></i></span>
                                                         </div>
                                                     </div>
@@ -204,7 +217,8 @@
                                                     <label class="col-md-4 control-label" for=
                                                     "EMP_EMAILADDRESS">Email Address:</label> 
                                                     <div class="col-md-8">
-                                                        <input type="Email" class="form-control input-sm" id="EMP_EMAILADDRESS" name="email" placeholder="Email Address"   autocomplete="false" required/> 
+                                                        <input type="Email" class="form-control input-sm" id="EMP_EMAILADDRESS" name="email" placeholder="Email Address" 
+                                                        value="{{ $employee->email }}"  autocomplete="false" required/> 
                                                     </div>
                                                     </div>
                                                 </div>  
@@ -216,7 +230,7 @@
 
                                                         <div class="col-md-8">
                                                         <select class="form-control input-sm" id="COMPANYID" name="companyname" required>
-                                                            <option value="">Select</option>
+                                                            <option value="{{ $employee->companyname }}">{{ $employee->companyname }}</option>
                                                                 @foreach($companies as $company)
                                                                     <option value="{{ $company->name }}">{{ $company->name }}</option>
                                                                 @endforeach                                        
@@ -232,7 +246,7 @@
                                                         "idno"></label>  
 
                                                         <div class="col-md-8">
-                                                            <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span> Save</button>
+                                                            <button class="btn btn-primary btn-sm" name="update" type="submit" ><span class="fa fa-save fw-fa"></span> Update</button>
                                                         </div>
                                                     </div>
                                                 </div> 

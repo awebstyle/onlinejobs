@@ -25,7 +25,7 @@
                     <div class="box-body">
                                                 <div class="row">
                             <div class="col-lg-12">
-                                <h1 class="page-header">List of Employee's  <a href={{ route('addemployee') }} class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> Add New Employee</a>  </h1>
+                                <h1 class="page-header">List of Employee's  <a href={{ route('employees.create') }} class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> Add New Employee</a>  </h1>
                             </div>
                                 <!-- /.col-lg-12 -->
                         </div>
@@ -48,22 +48,26 @@
                                 </thead> 
 
                                 <tbody>
-                                                                        <tr>
-                                        <td>2018001</td>
-                                        <td>Nkele</td>
-                                        <td>Nkele</td>
-                                        <td>Male</td>
-                                        <td>12/31/2000</td>
-                                        <td>0973566626</td>
-                                        <td>Developer</td>
-                                        <td align="center" >    
-                                            <a title="Edit" href="/admin/editemployee/1"  class="btn btn-info btn-xs  ">
-                                            <span class="fa fa-edit fw-fa"></span></a> 
-                                            <a title="Delete" href="/admin/deleteemployee/1"  class="btn btn-danger btn-xs  ">
-                                            <span class="fa fa-trash-o fw-fa"></span></a> 
-                                        </td>
-                                    </tr> 
-                                    		
+                                    @foreach($employees as $employee)
+                                        <tr>
+                                            <td>{{ $employee->empid }}</td>
+                                            <td>{{ $employee->firstname }}</td>
+                                            <td>{{ $employee->lastname }}</td>
+                                            <td>{{ $employee->gender }}</td>
+                                            <td>{{ $employee->birthday }}</td>
+                                            <td>0973566626</td>
+                                            <td>Developer</td>
+                                            <td style="display: flex; justify-content: space-around;">    
+                                                <a title="Edit" href={{ route('employees.edit', $employee->id)}}  class="btn btn-info btn-xs  ">
+                                                <span class="fa fa-edit fw-fa"></span></a> 
+                                                <form method="POST" action={{ route('employees.destroy', $employee->id) }}>
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="sumbit" class="btn btn-danger btn-xs"><span class="fa fa-trash-o fw-fa"></span></button>
+                                                </form> 
+                                            </td>
+                                        </tr> 
+                                    @endforeach		
                                 </tbody>
                             </table>    
                         </form>
