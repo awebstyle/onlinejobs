@@ -23,7 +23,7 @@
           <div class="panel panel-primary">
 
             <div class="panel-header">
-              <div style="border-bottom: 1px solid #ddd;padding: 10px;font-size: 20px;font-weight: bold;color: #000;margin-bottom: 5px;"><a href="/jobdetails/IT Manager">{{ $vacancy->occuptitle }}</a> 
+              <div style="border-bottom: 1px solid #ddd;padding: 10px;font-size: 20px;font-weight: bold;color: #000;margin-bottom: 5px;"><a href={{ route('vacancies.show', $vacancy->id)}}>{{ $vacancy->occuptitle }}</a> 
               </div> 
             </div>
 

@@ -71,7 +71,10 @@ class VacanciesController extends Controller
      */
     public function show($id)
     {
-        //
+        $vacancy = Vacancy::find($id);
+        $companies = Company::get();
+        $categories = Category::get();
+        return view('front.jobdetails')->with('vacancy', $vacancy)->with('companies', $companies)->with('categories', $categories);
     }
 
     /**

@@ -21,26 +21,19 @@ use App\Http\Controllers\FrontController;
 |
 */
 
-Route::get('/about', function(){
-    return view('front.about');
-})->name('about');
 
-Route::get('/advancedsearch', function(){
-    return view('front.advancedsearch');
-})->name('advancedsearch');
 
 Route::get('/', [FrontController::class, 'home'])->name('home');
 Route::get('/company', [FrontController::class, 'showCompanies'])->name('company');
 Route::get('/jobbycompany/{id}', [FrontController::class, 'hiringCompany'])->name('hiringcompany');
 Route::get('/jobbycategory/{category}', [FrontController::class, 'jobByCategory'])->name('jobbycategory');
+Route::get('/contactus', [FrontController::class, 'contactUs'])->name('contactus');
+Route::get('/hiring', [FrontController::class, 'hiring'])->name('hiring');
+Route::get('/about', [FrontController::class, 'about'])->name('about');
+Route::get('/advancedsearch', [FrontController::class, 'advancedsearch'])->name('advancedsearch');
 
-Route::get('/contactus', function(){
-    return view('front.contactus');
-})->name('contactus');
 
-Route::get('/hiring', function(){
-    return view('front.hiring');
-})->name('hiring');
+
 
 Route::get('/jobbycompany', function(){
     return view('front.jobbycompany');
