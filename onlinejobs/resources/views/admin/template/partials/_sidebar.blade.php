@@ -13,8 +13,8 @@
                     <i class="fa fa-building"></i> <span>Company</span> 
                 </a>
             </li>
-            <li class="{{ request()->is('adminvacancies') || request()->is('addvacancy') ? 'active' : ''}}" >
-                <a href={{ route('adminvacancies') }}>
+            <li class="{{ request()->is('vacancies.index') || request()->is('addvacancy') ? 'active' : ''}}" >
+                <a href={{ route('vacancies.index') }}>
                     <i class="fa fa-suitcase"></i> <span>Vacancy</span> 
                 </a>
             </li>
