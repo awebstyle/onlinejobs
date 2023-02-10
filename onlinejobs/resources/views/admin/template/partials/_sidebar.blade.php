@@ -30,8 +30,8 @@
                     <span class="label label-primary pull-right">0</span>
                 </a>
             </li> 
-            <li class="{{ request()->is('admincategories') || request()->is('addcategory') ? 'active' : '' }}" > 
-                <a href={{ route('admincategories') }}>
+            <li class="{{ request()->is('categories.index') || request()->is('addcategory') ? 'active' : '' }}" > 
+                <a href={{ route('categories.index') }}>
                     <i class="fa fa-list"></i> <span>Category</span>  
                 </a>
             </li>      

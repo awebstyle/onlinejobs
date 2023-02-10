@@ -1,15 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
-use Illuminate\Http\Request;
-use App\Models\Company;
-
 use App\Http\Controllers\Controller;
 
+use Illuminate\Http\Request;
 
+use App\Models\Category;
 
-class CompaniesController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +16,8 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        $companies = Company::All();
-        return view('admin.companies')->with('companies', $companies);
+        $categories = Category::All();
+        return view('admin.categories')->with('categories', $categories);
     }
 
     /**
@@ -29,7 +27,7 @@ class CompaniesController extends Controller
      */
     public function create()
     {
-        return view('admin.addcompany');
+        return view('admin.addcategory');
     }
 
     /**
@@ -40,15 +38,12 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
-        $company = new Company();
-        $company->name = $request->input('name');
-        $company->address = $request->input('address');
-        $company->contact = $request->input('contact');
+        $category = new Category();
+        $category->category = $request->input('category');
 
-        $company->save();
-        
-        return back()->with('status', 'The company has been successfully crated');
+        $category->save();
 
+        return back()->with('status', 'The category has been created successfully');
     }
 
     /**
@@ -70,8 +65,9 @@ class CompaniesController extends Controller
      */
     public function edit($id)
     {
-        $company = Company::find($id);
-        return view('admin.editcompany')->with('company', $company);    }
+        $category = Category::find($id);
+        return view('admin.editcategory')->with('category', $category);
+    }
 
     /**
      * Update the specified resource in storage.
@@ -82,15 +78,14 @@ class CompaniesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $company = Company::find($id);
+        $category = Category::find($id);
+        
 
-        $company->name = $request->input('name');
-        $company->address = $request->input('address');
-        $company->contact = $request->input('contact');
+        $category->category = $request->input('category');
 
-        $company->update();
-
-        return redirect('/companies')->with('status', 'The company has been successfully updated');
+        $category->update();
+        
+         return redirect('/categories')->with('status', 'The category has been successfully updated');
     }
 
     /**
@@ -101,10 +96,8 @@ class CompaniesController extends Controller
      */
     public function destroy($id)
     {
-        
-        $company = Company::find($id);
-        $company->delete();
-
-        return back()->with('status', 'the company has been successfully deleted'); 
+        $category = Category::find($id);
+        $category->delete();
+        return back()->with('status', 'The category has been successfully deleted');
     }
 }

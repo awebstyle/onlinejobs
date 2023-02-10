@@ -20,14 +20,21 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-body">
-                            <form class="form-horizontal span6" action="admin/savecategory" method="POST">
-                <input type="hidden" name="_token" value="Nlnz4RR81OkM5thtNt1eIPiOup05KoiKdN3rY7OA">
+              <form class="form-horizontal span6" action={{ route('categories.store')}} method="POST">
+                @csrf
+                
                 <div class="row">
                   <div class="col-lg-12">
                     <h1 class="page-header">Add New Category</h1>
                   </div>
                   <!-- /.col-lg-12 -->
                 </div> 
+
+                @if(Session::has('status'))
+                  <div class="alert alert-success">
+                    {{ Session::get('status') }}
+                  </div>
+                @endif   
 
                 <div class="form-group">
                   <div class="col-md-8">
