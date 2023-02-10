@@ -26,16 +26,10 @@
                     <li class="dropdown {{ request()->is('jobbycategory') ? 'active' : '' }}">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Popular Jobs <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href={{ route('jobbycategory') }}>Technology Jobs</a></li>
-                        <li><a href="">Managerial Jobs</a></li>
-                        <li><a href="">Engineer Jobs</a></li>
-                        <li><a href="">IT Jobs</a></li>
-                        <li><a href="">Civil Engineer Jobs</a></li>
-                        <li><a href="">HR Jobs</a></li>
-                        <li><a href="">Sales Jobs</a></li>
-                        <li><a href="">Banking Jobs</a></li>
-                        <li><a href="">Finance Jobs</a></li>
-                        <li><a href="">BPO Jobs</a></li> 
+                        @foreach($categories as $category)
+                            <li><a href={{ route('jobbycategory', $category->category) }}>{{ $category->category }}</a></li>
+                        @endforeach
+                        
                     </ul>
                     </li> 
                     <li class="{{ request()->is('company') ? 'active' : '' }}"><a href={{ route('company') }}>Company</a></li>

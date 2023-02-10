@@ -32,7 +32,7 @@ Route::get('/advancedsearch', function(){
 Route::get('/', [FrontController::class, 'home'])->name('home');
 Route::get('/company', [FrontController::class, 'showCompanies'])->name('company');
 Route::get('/jobbycompany/{id}', [FrontController::class, 'hiringCompany'])->name('hiringcompany');
-
+Route::get('/jobbycategory/{category}', [FrontController::class, 'jobByCategory'])->name('jobbycategory');
 
 Route::get('/contactus', function(){
     return view('front.contactus');
@@ -64,9 +64,9 @@ Route::get('/jobbytitle', function(){
     return view('front.jobbytitle');
 })->name('jobbytitle');
 
-Route::get('/jobbycategory', function(){
+/* Route::get('/jobbycategory', function(){
     return view('front.jobbycategory');
-})->name('jobbycategory');
+})->name('jobbycategory'); */
 
 Route::get('/submitapp', function(){
     return view('front.submit');

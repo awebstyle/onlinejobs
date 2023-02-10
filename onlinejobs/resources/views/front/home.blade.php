@@ -74,18 +74,13 @@
             </div>
 
             <div class="row">
+                @foreach($categories as $category)
                 <div class="col-md-12 ">
-                                            <div class="col-md-3" style="font-size:15px;padding:5px"> 
-                            * <a href="/jobbycategory/Technology">Technology</a>
+                        <div class="col-md-3" style="font-size:15px;padding:5px"> 
+                            * <a href="/jobbycategory/{{ $category->category }}">{{$category->category}}</a>
                         </div> 
-                                            <div class="col-md-3" style="font-size:15px;padding:5px"> 
-                            * <a href="/jobbycategory/Digital Marketing">Digital Marketing</a>
-                        </div> 
-                                            <div class="col-md-3" style="font-size:15px;padding:5px"> 
-                            * <a href="/jobbycategory/It jobs">It jobs</a>
-                        </div> 
-                        
                 </div>
+                @endforeach
             </div>
         </div>
     </section>  
