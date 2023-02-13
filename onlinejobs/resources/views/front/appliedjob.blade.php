@@ -1,4 +1,4 @@
-@extends('front.template.profileindex')
+@extends('front.template.index')
 
 @section('title')
     Job Applied

@@ -24,7 +24,8 @@ class FrontController extends Controller
     public function hiringCompany($id){
         $company = Company::find($id);
         $categories = Category::All();
-        return view('front.hiringcompany')->with('company', $company)->with('categories', $categories);
+        $vacancies = Vacancy::where('companyname', 'like', $company->name)->get();
+        return view('front.hiringcompany')->with('company', $company)->with('vacancies', $vacancies)->with('categories', $categories);
     }
 
     public function jobByCategory($category){
@@ -43,7 +44,9 @@ class FrontController extends Controller
 
     public function hiring(){
         $categories = Category::get();
-        return view('front.hiring')->with('categories', $categories);
+        $vacancies = Vacancy::get();
+        $companies = Company::get();
+        return view('front.hiring')->with('categories', $categories)->with('vacancies', $vacancies)->with('companies', $companies);
     }
 
     public function about(){
@@ -51,8 +54,15 @@ class FrontController extends Controller
         return view('front.about')->with('categories', $categories);
     }
 
-    public function advancedsearch(){
+    public function advancedSearch(){
         $categories = Category::get();
         return view('front.advancedsearch')->with('categories', $categories);
     }
+
+    public function applyNow(){
+        $categories = Category::get();
+        return view('front.submit')->with('categories', $categories);
+    }
+
+   
 }

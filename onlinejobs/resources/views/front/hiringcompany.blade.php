@@ -26,13 +26,14 @@
                 <th>Date Posted</th>
             </thead>
             <tbody>
-                                    <tr>
-                        <td><a href={{ route('jobdetails', 1)}}>Developer</a></td>
-                        <td>URC</td>
-                        <td>Bry Camugao</td>
-                        <td>2022-07-26 02:15:02</td>
+                @foreach($vacancies as $vacancy)
+                    <tr>
+                        <td><a href={{ route('vacancies.show', $vacancy->id)}}>{{$vacancy->occuptitle}}</a></td>
+                        <td>{{$company->name}}</td>
+                        <td>{{$company->address}}</td>
+                        <td>{{$vacancy->created_at}}</td>
                     </tr>
-                
+                @endforeach
             </tbody>
         </table>   
     </div>

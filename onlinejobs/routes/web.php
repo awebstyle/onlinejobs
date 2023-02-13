@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CompaniesController;
 use App\Http\Controllers\Admin\EmployeesController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\VacanciesController;
+use App\Http\Controllers\Admin\LoginController;
 
 use App\Http\Controllers\FrontController;
 
@@ -30,10 +31,13 @@ Route::get('/jobbycategory/{category}', [FrontController::class, 'jobByCategory'
 Route::get('/contactus', [FrontController::class, 'contactUs'])->name('contactus');
 Route::get('/hiring', [FrontController::class, 'hiring'])->name('hiring');
 Route::get('/about', [FrontController::class, 'about'])->name('about');
-Route::get('/advancedsearch', [FrontController::class, 'advancedsearch'])->name('advancedsearch');
+Route::get('/advancedsearch', [FrontController::class, 'advancedSearch'])->name('advancedsearch');
+Route::get('/applynow', [FrontController::class, 'applyNow'])->name('applynow');
 
-
-
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/createaccount', [LoginController::class, 'createAccount'])->name('createaccount');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/signout', [LoginController::class, 'signout'])->name('signout');
 
 Route::get('/jobbycompany', function(){
     return view('front.jobbycompany');
@@ -57,18 +61,8 @@ Route::get('/jobbytitle', function(){
     return view('front.jobbytitle');
 })->name('jobbytitle');
 
-/* Route::get('/jobbycategory', function(){
-    return view('front.jobbycategory');
-})->name('jobbycategory'); */
-
-Route::get('/submitapp', function(){
-    return view('front.submit');
-})->name('submitapp');
 
 
-Route::get('/register', function(){
-    return view('front.register');
-})->name('register');
 
 Route::get('/profile', function(){
     return view('front.profile');

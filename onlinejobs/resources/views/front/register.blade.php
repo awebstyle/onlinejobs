@@ -19,8 +19,8 @@
         <div class="container content">    
             <p> </p> 
 
-            <form class="form-horizontal span6  wow fadeInDown" action="createaccount " method="POST">
-            <input type="hidden" name="_token" value="ZJLPQIkfMJhoPRGwoueM8KtNelvHt69vXLhsfjjO">
+            <form class="form-horizontal span6  wow fadeInDown" action="{{ route('createaccount') }}" method="POST">
+            @csrf
             <div class="col-sm-8"> 
                 <div class="row">
                 <h2 class=" ">Personal Info</h2>
@@ -32,7 +32,7 @@
                         "FNAME">Firstname:</label>
                     <div class="col-md-8">
                         <input class="form-control input-sm" id="FNAME" name="firstname" placeholder=
-                        "Firstname" type="text" value="" autocomplete="off" required>
+                        "Firstname" type="text" autocomplete="off" required>
                     </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
             
                     <div class="col-md-8">
                         <textarea class="form-control input-sm" id="ADDRESS" name="address" placeholder=
-                        "Address" type="text" value="" required autocomplete="off"></textarea>
+                        "Address" type="text" required autocomplete="off"></textarea>
                     </div>
                     </div>
                 </div> 
@@ -110,10 +110,11 @@
                 <div class="form-group">
                     <div class="col-md-11">
                     <label class="col-md-4 control-label" for=
+                    
                     "BIRTHPLACE">Place of Birth:</label>
             
                     <div class="col-md-8">
-                        <textarea class="form-control input-sm" id="ADDRESS" name="birthplace" placeholder="Place of Birth" type="text" value="" required autocomplete="off"></textarea>
+                        <textarea class="form-control input-sm" id="ADDRESS" name="birthplace" placeholder="Place of Birth" type="text"  required autocomplete="off"></textarea>
                     </div>
                     </div>
                 </div> 
@@ -124,8 +125,8 @@
                     "phone">Contact No.:</label>
                 
                     <div class="col-md-8">
-                        <input class="form-control input-sm" id="TELNO" name="phone" placeholder=
-                        "Contact No." type="text" any value="" required autocomplete="off">
+                        <input class="form-control input-sm" id="phone" name="phone" placeholder=
+                        "Contact No." type="text" any  required autocomplete="off">
                     </div>
                     </div>
                 </div> 
@@ -186,7 +187,7 @@
                     "DEGREE">Educational Attainment:</label>
                 
                     <div class="col-md-8">
-                        <input  class="form-control input-sm" id="DEGREE" name="degree" placeholder=
+                        <input  class="form-control input-sm" id="degree" name="degree" placeholder=
                         "Educational Attainment" autocomplete="off" required>
                     </div>
                     </div>

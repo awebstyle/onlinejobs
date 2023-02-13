@@ -26,25 +26,20 @@
                 <th>Date Posted</th>
             </thead>
             <tbody>
-                                    <tr>
-                        <td><a href={{ route('jobdetails', 2)}}>Developer</a></td>
-                        <td>URC</td>
-                        <td>Bry Camugao</td>
-                        <td>2022-07-26 02:15:02</td>
+                @foreach($vacancies as $vacancy)
+                    <tr>
+                        <td><a href={{ route('vacancies.show', $vacancy->id)}}>{{$vacancy->occuptitle}}</a></td>
+                        <td>{{$vacancy->companyname}}</td>
+                        <td>
+                            @foreach($companies as $company)
+                                @if($company->name == $vacancy->companyname)
+                                    {{$company->address}}
+                                @endif
+                            @endforeach
+                        </td>
+                        <td>{{$vacancy->created_at}}</td>
                     </tr>  
-                                    <tr>
-                        <td><a href={{ route('jobdetails', 3)}}>IT Manager</a></td>
-                        <td>Quest</td>
-                        <td>Kabankalan City</td>
-                        <td>2022-07-27 01:22:00</td>
-                    </tr>  
-                                    <tr>
-                        <td><a href={{ route('jobdetails', 4)}}>Digital Marketer</a></td>
-                        <td>Copreros</td>
-                        <td>Mabinay&#039;s</td>
-                        <td>2022-07-27 01:23:11</td>
-                    </tr>  
-                
+                @endforeach
             </tbody>
         </table>   
     </div>

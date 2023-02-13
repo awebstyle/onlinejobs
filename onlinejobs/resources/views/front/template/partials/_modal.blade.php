@@ -11,14 +11,14 @@
                                 <div id="loginerrormessage"></div>
                                 <div class="login-box"> 
                                     <div class="login-box-body" style="border: solid 1px #ddd;padding: 35px;min-height: 350px;"> 
-                                    <form action="login" method="post">
-                                        <input type="hidden" name="_token" value="ZJLPQIkfMJhoPRGwoueM8KtNelvHt69vXLhsfjjO">
+                                    <form method="post" action={{ route('login') }}>
+                                        @csrf
                                         <div class="form-group has-feedback">
-                                            <input type="text" class="form-control" placeholder="Username" name="username" required id="user_email">
+                                            <input type="text" class="form-control" placeholder="Email" name="email" required id="email">
                                             <span class="fa fa-user form-control-feedback" style="margin-top: -22px;"></span>
                                         </div>
                                         <div class="form-group has-feedback">
-                                            <input type="password" class="form-control" placeholder="Password" name="password" required id="user_pass">
+                                            <input type="password" class="form-control" placeholder="Password" name="password" required id="password">
                                             <span class="fa fa-lock form-control-feedback" style="margin-top: -22px;"></span>
                                         </div>
                                         <div class="row">
@@ -44,8 +44,11 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button class="btn btn-default" data-dismiss="modal">Close</button> <button class="btn btn-primary"
-                                name="btnlogin" type="submit" id="btnlogin"  >Login</button>
+                                <button class="btn btn-default" data-dismiss="modal">Close</button> 
+                                {{-- <form method="POST" action={{ route('login') }}> --}}
+                                
+                                    <button class="btn btn-primary" name="btnlogin" type="submit" id="btnlogin"  >Login</button>
+                                {{-- </form> --}}
                             </div>
                         </form>
                         </div><!-- /.modal-content -->
