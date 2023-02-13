@@ -32,7 +32,9 @@ Route::get('/contactus', [FrontController::class, 'contactUs'])->name('contactus
 Route::get('/hiring', [FrontController::class, 'hiring'])->name('hiring');
 Route::get('/about', [FrontController::class, 'about'])->name('about');
 Route::get('/advancedsearch', [FrontController::class, 'advancedSearch'])->name('advancedsearch');
-Route::get('/applynow', [FrontController::class, 'applyNow'])->name('applynow');
+Route::get('/applynow/{id}', [FrontController::class, 'applyNow'])->name('applynow');
+Route::post('/submit', [FrontController::class, 'submit'])->name('submit');
+Route::get('/success', [FrontController::class, 'success'])->name('success');
 
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/createaccount', [LoginController::class, 'createAccount'])->name('createaccount');

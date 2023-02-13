@@ -45,7 +45,7 @@ class LoginController extends Controller
 
         $account->save();
 
-        Session::put('client', $account);
+        
         return back()->with('status', 'Your account has been successfully created');
 
     }

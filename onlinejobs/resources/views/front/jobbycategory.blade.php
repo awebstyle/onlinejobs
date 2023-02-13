@@ -57,7 +57,7 @@
               </div>
 
               <div class="col-sm-2"> 
-                <a href={{ route('applynow') }} class="btn btn-main btn-next-tab">Apply Now !</a>
+                <a href={{ route('applynow', $vacancy->id) }} class="btn btn-main btn-next-tab">Apply Now !</a>
               </div>
 
             </div> 

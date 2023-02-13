@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Company;
 use App\Models\Category;
 use App\Models\Vacancy;
+use App\Models\Applicant;
+use Illuminate\Support\Facades\Session;
 
 class FrontController extends Controller
 {
@@ -59,10 +61,52 @@ class FrontController extends Controller
         return view('front.advancedsearch')->with('categories', $categories);
     }
 
-    public function applyNow(){
+    public function applyNow($id){
         $categories = Category::get();
-        return view('front.submit')->with('categories', $categories);
+        $vacancy = Vacancy::find($id);
+        $companies = Company::get();
+
+        if(Session::has('client')){
+            return view('front.submit')->with('categories', $categories)->with('vacancy', $vacancy)->with('companies', $companies);
+        }
+        else return redirect('/register');
+        
     }
 
+    public function submit(Request $request){
+
+        $this->validate($request, [
+            'resume' => "max:1999"
+        ]);
+
+        /* print($request->file('resume')); */
+        $filenameWithExt = $request->file('resume')->getClientOriginalName();
+        $fileName = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        $ext = $request->file('resume')->getClientOriginalExtension();
+        $filenameToStore = $fileName."_".time().'.'.$ext;
+
+        $applicant = new Applicant();
+        
+        $applicant->fullname = Session::get('client')->firstname." ".Session::get('client')->middlename." ".Session::get('lastname');
+        $applicant->occuptitle = $request->input('occuptitle');
+        $applicant->company = $request->input('companyname');
+        $applicant->clientid = $request->input('clientid');
+        $applicant->vacancyid = $request->input('vacancyid');
+        $applicant->status = "pending";
+        $applicant->resume = $filenameToStore;
+
+        $applicant->save();
+
+        // CV upload
+        $path = $request->file('resume')->storeAs('public/resumes', $filenameToStore);
+
+        return redirect('/success')->with('status', 'Your application has been successfully sent');
+
+    }
+
+    public function success(){
+        $categories = Category::get();
+        return view('front.success')->with('categories', $categories);
+    }
    
 }

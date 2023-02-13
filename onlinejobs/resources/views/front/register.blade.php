@@ -25,7 +25,25 @@
                 <div class="row">
                 <h2 class=" ">Personal Info</h2>
                 
-                            <br>       
+                            <br>  
+                            
+                @if(Session::has('status'))
+                    <div class="alert alert-success">
+                        {{ Session::get('status')}}
+                    </div>
+                @endif
+
+                @if(count($errors) > 0)
+                    @foreach($errors->all() as $error)
+                    <ul>
+                    
+                        <li class="alert alert-danger">
+                            {{ $error }}
+                        </li>
+
+                    </ul>
+                    @endforeach
+                @endif
                 <div class="form-group">
                     <div class="col-md-11">
                     <label class="col-md-4 control-label" for=
@@ -110,7 +128,7 @@
                 <div class="form-group">
                     <div class="col-md-11">
                     <label class="col-md-4 control-label" for=
-                    
+
                     "BIRTHPLACE">Place of Birth:</label>
             
                     <div class="col-md-8">
