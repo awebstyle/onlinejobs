@@ -36,7 +36,7 @@ Route::get('/advancedsearch', [FrontController::class, 'advancedSearch'])->name(
 Route::get('/applynow/{id}', [FrontController::class, 'applyNow'])->name('applynow');
 Route::post('/submit', [FrontController::class, 'submit'])->name('submit');
 Route::get('/success', [FrontController::class, 'success'])->name('success');
-Route::get('/profile', [FrontController::class, 'profile'])->name('profile');
+Route::get('/profile/{id}', [FrontController::class, 'profile'])->name('profile');
 
 
 Route::get('/register', [LoginController::class, 'register'])->name('register');

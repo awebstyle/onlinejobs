@@ -41,21 +41,19 @@
                                   <tr>
                                     <th>Job Title</th>
                                     <th>Company</th>
-                                    <th>Location</th>
                                     <th>Status</th>
                                   </tr>
                                 </thead>
                                 <tbody>
-                                                              <tr>
+                                  @foreach($jobs as $job)
+                                    <tr>
                                       <td class="mailbox-star">
-                                        <a href=""><i class="fa fa-pencil-o text-yellow"></i> Developer</a>
+                                        <a href=""><i class="fa fa-pencil-o text-yellow"></i>{{ $job->occuptitle }}</a>
                                       </td>
-                                      <td class="mailbox-attachment">URC</td>
-                                      <td class="mailbox-attachment">Av. Malula num 12 Lemba/Righini</td>
-                                      <td class="mailbox-attachment">Thank you for your application and we will call you sooon.
-                                      </td>
+                                      <td class="mailbox-attachment">{{ $job->company }}</td>
+                                      <td class="mailbox-attachment">{{ $job->status}} </td>
                                     </tr>   
-                                        
+                                  @endforeach   
                                 </tbody>
                               </table>
                               <!-- /.table -->

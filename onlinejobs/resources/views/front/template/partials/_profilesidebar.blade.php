@@ -9,7 +9,7 @@
         <ul class="list-group">
         <li class="list-group-item text-muted">Profile</li>
         <li class="list-group-item text-right"><span class="pull-left"><strong>Real Name</strong></span> 
-        Gisèle Bastin 
+            {{ Session::get('client')->firstname }} {{ Session::get('client')->lastname }}
         </li>
         </ul> 
 

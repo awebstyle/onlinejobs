@@ -7,6 +7,7 @@ use App\Models\Company;
 use App\Models\Category;
 use App\Models\Vacancy;
 use App\Models\Applicant;
+use App\Models\Client;
 use Illuminate\Support\Facades\Session;
 
 class FrontController extends Controller
@@ -110,9 +111,11 @@ class FrontController extends Controller
         return view('front.success')->with('categories', $categories);
     }
 
-    public function profile(){
+    public function profile($id){
+        $client = Client::find($id);
         $categories = Category::get();
-        return view('front.profile')->with('categories', $categories);
+        $jobs = Applicant::where('clientid', 'like', $client->id)->get();
+        return view('front.profile')->with('client', $client)->with('categories', $categories)->with('jobs', $jobs);
     }
    
 }

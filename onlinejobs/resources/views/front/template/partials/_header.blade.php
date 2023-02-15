@@ -13,7 +13,7 @@
                                         
                                 <a title="View Message(s)" href=""> <i class="fa fa-envelope-o"></i> <span class="label label-success">1</span></a> | 
                                         
-                                <a title="View Profile" href=" profile "> <i class="fa fa-user"></i> Howdy, {{ Session::get('client')->firstname }}</a> | 
+                                <a title="View Profile" href={{ route('profile', Session::get('client')->id)}}> <i class="fa fa-user"></i> Howdy, {{ Session::get('client')->firstname }}</a> | 
                                         
                                 <a href={{ route('signout') }}>  <i class="fa fa-sign-out"> </i>Logout</a> 
                                         
