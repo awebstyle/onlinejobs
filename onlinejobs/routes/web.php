@@ -38,20 +38,15 @@ Route::post('/submit', [FrontController::class, 'submit'])->name('submit');
 Route::get('/success', [FrontController::class, 'success'])->name('success');
 Route::get('/profile/{id}', [FrontController::class, 'profile'])->name('profile');
 Route::post('/profile/{id}/uploadimage', [FrontController::class, 'uploadImage'])->name('uploadimage');
-
+Route::get('/jobbycompany', [FrontController::class, 'jobByCompany'])->name('jobbycompany');
+Route::get('/jobbyfunction', [FrontController::class, 'jobByFunction'])->name('jobbyfunction');
+Route::get('/jobbytitle', [FrontController::class, 'jobByTitle'])->name('jobbytitle');
 
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/createaccount', [LoginController::class, 'createAccount'])->name('createaccount');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/signout', [LoginController::class, 'signout'])->name('signout');
 
-Route::get('/jobbycompany', function(){
-    return view('front.jobbycompany');
-})->name('jobbycompany');
-
-Route::get('/jobbycompany', function(){
-    return view('front.jobbycompany');
-})->name('jobbycompany');
 
 
 
@@ -59,20 +54,11 @@ Route::get('/jobdetails/{id}', function(){
     return view('front.jobdetails');
 })->name('jobdetails');
 
-Route::get('/jobbyfunction', function(){
-    return view('front.jobbyfunction');
-})->name('jobbyfunction');
-
-Route::get('/jobbytitle', function(){
-    return view('front.jobbytitle');
-})->name('jobbytitle');
 
 
 
 
-
-
-Route::get('/profile/message', function(){
+/* Route::get('/profile/message', function(){
     return view('front.message');
 })->name('profilemessage');
 
@@ -82,16 +68,16 @@ Route::get('/profile/message/{id}', function(){
 
 Route::get('/profile/appliedjob', function(){
     return view('front.appliedjob');
-})->name('appliedjob');
+})->name('appliedjob'); */
 
 Route::get('/admin', function(){
     return view('admin.dashboard');
 })->name('adminhome');
 
 
-/* Route::get('/admin/applicants', function(){
+Route::get('/admin/applicants', function(){
     return view('admin.applicants');
-})->name('adminapplicants'); */
+})->name('adminapplicants'); 
 
 
 Route::get('/admin/users', function(){

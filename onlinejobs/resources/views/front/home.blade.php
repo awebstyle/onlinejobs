@@ -10,17 +10,18 @@
         <div id="main-slider" class="flexslider">
             <ul class="slides">
                 <li>
-                    <img src="plugins/home-plugins/img/slides/1.jpg" alt="" />
+                    <img src="plugins/home-plugins/img/slides/woman.png" alt="" />
                     <div class="flex-caption">
-                        <h3>innovation</h3> 
-                        <p>We create the opportunities</p> 
+                        <h3>Suis ce projet ...</h3>
+                         <p>Reviens lundi à 10h00</p>
+                        
                     </div>
                 </li>
                 <li>
-                    <img src="plugins/home-plugins/img/slides/2.jpg" alt="" />
+                    <img src="plugins/home-plugins/img/slides/man.png" alt="" />
                     <div class="flex-caption">
-                        <h3>Specialize</h3> 
-                        <p>Success depends on work</p>                    
+                        <h3>Quoi de neuf ?</h3> 
+                        <p>15/02/2023 - Base du projet réalisée en laravel</p>                  
                     </div>
                 </li>
             </ul>
@@ -32,8 +33,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-sm-9">
-                    <h3>Partner with Business Leaders</h3>
-                    <p>Development of successful, long term, strategic relationships between customers and suppliers, based on achieving best practice and sustainable competitive advantage. In the business partner model, HR professionals work closely with business leaders and line managers to achieve shared organisational objectives.</p>
+                    <h3>Tu veux un job qui te correspond ?</h3>
+                    <p>Ne cherche pas ton bonheur partout. C'est ici que tu le trouveras.</p>
                 </div>
             </div>
         </div>

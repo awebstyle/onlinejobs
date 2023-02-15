@@ -142,5 +142,22 @@ class FrontController extends Controller
         return back();
         
     }
+
+    public function jobByCompany(){
+        $categories = Category::get();
+        return view('front.jobbycompany')->with('categories', $categories);
+    }
+
+    public function jobByFunction(){
+        $categories = Category::get();
+        return view('front.jobbyfunction')->with('categories', $categories);
+    }
+
+    public function jobByTitle(){
+        $categories = Category::get();
+        return view('front.jobbytitle')->with('categories', $categories);
+    }
+
+
    
 }
