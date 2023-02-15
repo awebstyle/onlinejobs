@@ -52,27 +52,49 @@
         }
     </style>
 
-    <form action="" method="POST"> 
+    <form action={{ route('searchjob') }} method="POST"> 
+        @csrf
         <section id="content">
-        <div class="container">
-            <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <h2>Search field</h2>
-                <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="text" name="SEARCH" class="form-control input-lg" placeholder="Search By Job Title" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
+            <div class="container content">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="panel">
+                        <div class="panel-header"></div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-12 search1">
+                                    <label class="col-sm-3">SEARCH:</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="" name="searchedjob" placeholder="Search For">
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="row">
+                                <div class="col-sm-12 search1">
+                                    <label class="col-sm-3">TITLE:</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="occuptitle" id="occuptitle">
+                                            <option value="">All</option>
+                                            @foreach($categories as $category)
+                                                <option>{{ $category->category }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="row">
+                                <div class="col-sm-12 search1">
+                                    <label class="col-sm-3"></label>
+                                    <div class="col-sm-9">
+                                        <input type="submit" name="submit" class="btn btn-success">
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div> 
                 </div>
-                </div>
-            </div> 
-            <div class="col-md-2"></div>
+                <div class="col-sm-2"></div> 
             </div>
-        </div>
         </section>
     </form> 
 @endsection

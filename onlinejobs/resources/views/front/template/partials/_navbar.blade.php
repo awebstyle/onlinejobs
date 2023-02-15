@@ -17,10 +17,9 @@
                     <li class="dropdown {{ request()->is('advancedsearch') ? 'active' : '' }}">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Job Search <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class=""><a href={{ route('advancedsearch') }}>Advance Search</a></li>
+                            <li class=""><a href={{ route('advancedsearch') }}>Advanced Search</a></li>
                             <li><a href={{ route('jobbycompany') }}>Job By Company</a></li>
                             <li><a href={{ route('jobbyfunction') }}>Job By Function</a></li>
-                            <li><a href={{ route('jobbytitle') }}>Job By Title</a></li>
                         </ul>
                     </li> 
                     <li class="dropdown {{ request()->is('jobbycategory') ? 'active' : '' }}">

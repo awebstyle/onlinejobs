@@ -59,7 +59,8 @@ class FrontController extends Controller
 
     public function advancedSearch(){
         $categories = Category::get();
-        return view('front.advancedsearch')->with('categories', $categories);
+        $companies = Company::get();
+        return view('front.advancedsearch')->with('categories', $categories)->with('companies', $companies);
     }
 
     public function applyNow($id){
@@ -145,7 +146,8 @@ class FrontController extends Controller
 
     public function jobByCompany(){
         $categories = Category::get();
-        return view('front.jobbycompany')->with('categories', $categories);
+        $companies = Company::get();
+        return view('front.jobbycompany')->with('categories', $categories)->with('companies', $companies);
     }
 
     public function jobByFunction(){
@@ -155,6 +157,7 @@ class FrontController extends Controller
 
     public function jobByTitle(){
         $categories = Category::get();
+        
         return view('front.jobbytitle')->with('categories', $categories);
     }
 

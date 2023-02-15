@@ -12,7 +12,7 @@
                 <li>
                     <img src="plugins/home-plugins/img/slides/woman.png" alt="" />
                     <div class="flex-caption">
-                        <h3>Suis ce projet ...</h3>
+                        <h3>Comment ce projet évolue ?</h3>
                          <p>Reviens lundi à 10h00</p>
                         
                     </div>

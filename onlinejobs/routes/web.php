@@ -56,20 +56,6 @@ Route::get('/jobdetails/{id}', function(){
 
 
 
-
-
-/* Route::get('/profile/message', function(){
-    return view('front.message');
-})->name('profilemessage');
-
-Route::get('/profile/message/{id}', function(){
-    return view('front.readmessage');
-})->name('readmessage');
-
-Route::get('/profile/appliedjob', function(){
-    return view('front.appliedjob');
-})->name('appliedjob'); */
-
 Route::get('/admin', function(){
     return view('admin.dashboard');
 })->name('adminhome');
@@ -99,3 +85,5 @@ Route::resource('vacancies', VacanciesController::class);
 Route::resource('applicants', ApplicantsController::class);
 
 Route::post('/applicants/{id}/sendmessage', [ApplicantsController::class, 'sendMessage'])->name('sendmessage');
+
+Route::post('/advancedsearch/searchjob', [VacanciesController::class, 'searchJob'])->name('searchjob');

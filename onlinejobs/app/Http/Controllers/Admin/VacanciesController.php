@@ -132,4 +132,75 @@ class VacanciesController extends Controller
 
         return back()->with('status', 'The vacancy has been successfully deleted');
     }
+
+    public function searchJob(Request $request)
+    {
+        $categories = Category::get();
+        $companies = Company::get();
+        $searchedjob = $request->input('searchedjob');
+        $companyname = $request->input('company');
+        $category = $request->input('category');
+        
+        if($searchedjob){
+            if($companyname){
+                if($category){
+                    $vacancies = Vacancy::where('occuptitle', 'like', '%'.$searchedjob.'%')
+                        ->orWhere('description', 'like', '%'.$searchedjob.'%')
+                        ->orWhere('category', 'like', '%'.$searchedjob.'%')
+                        ->where('companyname', '=', $companyname)
+                        ->where('category', '=', $category)
+                        ->get();
+                }else{
+                    $vacancies = Vacancy::where('occuptitle', 'like', '%'.$searchedjob.'%')
+                        ->orWhere('description', 'like', '%'.$searchedjob.'%')
+                        ->orWhere('category', 'like', '%'.$searchedjob.'%')
+                        ->where('companyname', '=', $companyname)
+                        ->get();
+                }
+            }elseif($category){
+                $vacancies = Vacancy::where('occuptitle', 'like', '%'.$searchedjob.'%')
+                        ->orWhere('description', 'like', '%'.$searchedjob.'%')
+                        ->orWhere('category', 'like', '%'.$searchedjob.'%')
+                        ->where('category', '=', $category)
+                        ->get();
+            }else{
+                $vacancies = Vacancy::where('occuptitle', 'like', '%'.$searchedjob.'%')
+                        ->orWhere('description', 'like', '%'.$searchedjob.'%')
+                        ->orWhere('category', 'like', '%'.$searchedjob.'%')
+                        ->get();
+            }
+        }else{
+            if($companyname){
+                if($category){
+                    $vacancies = Vacancy::where('companyname', '=', $companyname)
+                        ->where('category', '=', $category)
+                        ->get();
+                }else{
+                    $vacancies = Vacancy::where('companyname', '=', $companyname)
+                        ->get();
+                }
+            }else{
+                if($category){
+                    $vacancies = Vacancy::where('category', '=', $category)
+                        ->get();
+                }
+                else{
+                    return back()->with('status', 'No job found');
+                }
+            }
+        }
+            
+        return view('front.advancedsearchresult')
+            ->with('categories', $categories)
+            ->with('vacancies', $vacancies)
+            ->with('searchedjob', $searchedjob)
+            ->with('category', $category)
+            ->with('companyname', $companyname)
+            ->with('companies', $companies);
+            
+    }
+
+        
+        
 }
+

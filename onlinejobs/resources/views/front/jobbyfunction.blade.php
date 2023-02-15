@@ -34,7 +34,8 @@
         }
     </style>
 
-    <form action="" method="POST"> 
+   <form action={{ route('searchjob') }} method="POST"> 
+        @csrf
         <section id="content">
             <div class="container content">
                 <div class="col-sm-2"></div>
@@ -46,7 +47,7 @@
                                 <div class="col-sm-12 search1">
                                     <label class="col-sm-3">SEARCH:</label>
                                     <div class="col-sm-9">
-                                        <input class="form-control" type="" name="SEARCH" placeholder="Search For">
+                                        <input class="form-control" type="" name="searchedjob" placeholder="Search For">
                                     </div>
                                 </div>
                             </div>   
@@ -54,19 +55,11 @@
                                 <div class="col-sm-12 search1">
                                     <label class="col-sm-3">FUNCTION:</label>
                                     <div class="col-sm-9">
-                                        <select class="form-control" name="CATEGORY">
+                                        <select class="form-control" name="category" id="category">
                                             <option value="">All</option>
-                                            <option>Technology</option>
-                                            <option>Managerial</option>
-                                            <option>Engineer</option>
-                                            <option>IT</option>
-                                            <option>Civil Engineer</option>
-                                            <option>HR</option>
-                                            <option>Sales</option>
-                                            <option>Banking</option>
-                                            <option>Finance</option>
-                                            <option>BPO</option>
-                                            <option>Degital Marketing</option><option>Shipping</option>			
+                                            @foreach($categories as $category)
+                                                <option>{{ $category->category }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>

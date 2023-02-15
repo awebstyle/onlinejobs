@@ -5,6 +5,11 @@
 @endsection
 
 @section('content')
+    @if(Session::has('status'))
+        <div class="alert alert-danger">
+            {{ Session::get('status') }}
+        </div>
+    @endif
     <section id="inner-headline">
         <div class="container">
         <div class="row">
@@ -15,7 +20,8 @@
         </div>
     </section> 
 
-    <form action="" method="POST"> 
+    <form action={{ route('searchjob') }} method="POST"> 
+        @csrf
         <section id="content">
             <div class="container content">
                 <div class="col-sm-2"></div>
@@ -27,7 +33,7 @@
                                     <div class="col-sm-12 search1">
                                         <label class="col-sm-3">SEARCH:</label>
                                         <div class="col-sm-9">
-                                            <input class="form-control" type="" name="SEARCH" placeholder="Search For">
+                                            <input class="form-control" type="" name="searchedjob" placeholder="Search For">
                                         </div>
                                     </div>
                                 </div>
@@ -36,13 +42,11 @@
                                     <div class="col-sm-12 search1">
                                     <label class="col-sm-3">COMPANY:</label>
                                     <div class="col-sm-9">
-                                        <select class="form-control" name="COMPANY">
-                                        <option value="">All</option>
-                                        <option>URC</option>
-                                        <option>Copreros</option>
-                                        <option>Quest</option>
-                                        <option>Palacios Company</option>
-                                        <option>IT Company</option>										
+                                        <select class="form-control" name="company" id="company">
+                                            <option value="">All</option>
+                                            @foreach($companies as $company)
+                                                <option>{{ $company->name }}</option>		
+                                            @endforeach
                                         </select>
                                     </div>
                                     </div>
