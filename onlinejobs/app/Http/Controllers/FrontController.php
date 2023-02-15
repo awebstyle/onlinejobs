@@ -69,8 +69,9 @@ class FrontController extends Controller
         if(Session::has('client')){
             return view('front.submit')->with('categories', $categories)->with('vacancy', $vacancy)->with('companies', $companies);
         }
-        else return redirect('/register');
-        
+        else {
+            return redirect('/register')->with('status', 'Please, signin or create an account before applying to that job.');
+        }
     }
 
     public function submit(Request $request){

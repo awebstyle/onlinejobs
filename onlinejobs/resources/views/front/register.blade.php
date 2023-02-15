@@ -7,12 +7,13 @@
 @section('content')
     <section id="inner-headline">
         <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="pageTitle">Register New Member</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">Register New Member</h2>
+                </div>
             </div>
         </div>
-        </div>
+        
     </section>
     
     <section id="content">
