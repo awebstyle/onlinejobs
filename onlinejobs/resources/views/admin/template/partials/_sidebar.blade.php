@@ -23,8 +23,8 @@
                     <i class="fa fa-users"></i> <span>Employee</span> 
                 </a>
             </li> 
-            <li class="{{ request()->is('adminapplicants') ? 'active' : ''}}" > 
-                <a href={{ route('adminapplicants')}}>
+            <li class="{{ request()->is('applicants.index') ? 'active' : ''}}" > 
+                <a href={{ route('applicants.index') }}>
                     <i class="fa fa-users"></i>
                     <span>Applicants</span> 
                     <span class="label label-primary pull-right">0</span>

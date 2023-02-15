@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\EmployeesController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\VacanciesController;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\ApplicantsController;
 
 use App\Http\Controllers\FrontController;
 
@@ -35,6 +36,8 @@ Route::get('/advancedsearch', [FrontController::class, 'advancedSearch'])->name(
 Route::get('/applynow/{id}', [FrontController::class, 'applyNow'])->name('applynow');
 Route::post('/submit', [FrontController::class, 'submit'])->name('submit');
 Route::get('/success', [FrontController::class, 'success'])->name('success');
+Route::get('/profile', [FrontController::class, 'profile'])->name('profile');
+
 
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/createaccount', [LoginController::class, 'createAccount'])->name('createaccount');
@@ -66,9 +69,7 @@ Route::get('/jobbytitle', function(){
 
 
 
-Route::get('/profile', function(){
-    return view('front.profile');
-})->name('profile');
+
 
 Route::get('/profile/message', function(){
     return view('front.message');
@@ -87,9 +88,9 @@ Route::get('/admin', function(){
 })->name('adminhome');
 
 
-Route::get('/admin/applicants', function(){
+/* Route::get('/admin/applicants', function(){
     return view('admin.applicants');
-})->name('adminapplicants');
+})->name('adminapplicants'); */
 
 
 Route::get('/admin/users', function(){
@@ -108,3 +109,4 @@ Route::resource('companies', CompaniesController::class);
 Route::resource('employees', EmployeesController::class);
 Route::resource('categories', CategoriesController::class);
 Route::resource('vacancies', VacanciesController::class);
+Route::resource('applicants', ApplicantsController::class);

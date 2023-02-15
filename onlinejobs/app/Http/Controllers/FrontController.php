@@ -108,5 +108,10 @@ class FrontController extends Controller
         $categories = Category::get();
         return view('front.success')->with('categories', $categories);
     }
+
+    public function profile(){
+        $categories = Category::get();
+        return view('front.profile')->with('categories', $categories);
+    }
    
 }

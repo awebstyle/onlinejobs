@@ -15,7 +15,7 @@
             <li class=>Applicants</li>      
         </ol>
     </section>
-
+   
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
@@ -39,19 +39,25 @@
                                     </tr>	
                                 </thead> 
                                 <tbody>
-                                                                            <tr>
-                                            <td>Nkele Nkele</td>
-                                            <td>Digital Marketer</td>
-                                            <td>URC</td>
-                                            <td>2022-08-01 00:04:16</td>
-                                            <td align="center" >    
-                                                <a title="View" href="/admin/viewapplicant/4/3"  class="btn btn-info btn-xs  ">
+                                    @foreach($applicants as $applicant)
+                                        <tr>
+                                            <td>{{ $applicant->fullname }}</td>
+                                            <td>{{ $applicant->occuptitle }}</td>
+                                            <td>{{ $applicant->company }}</td>
+                                            <td>{{ $applicant->created_at }}</td>
+                                            <td style="display: flex; justify-content: space-around;">   
+                                                <a title="View" href={{ route('applicants.show', $applicant->id) }}  class="btn btn-info btn-xs  ">
                                                 <span class="fa fa-info fw-fa"></span> View</a> 
-                                                <a title="Remove" href="/admin/deleteapplicant/1"  class="btn btn-danger btn-xs  ">
-                                                <span class="fa fa-trash-o fw-fa"></span> Remove</a> 
+                                                <form method="POST" action={{ route('applicants.destroy', $applicant->id)}}>
+                                                    @csrf
+                                                    @method('delete')
+                                                        <button type=sumbit class="btn btn-danger btn-xs"> <span class="fa fa-trash-o fw-fa"></span></button>
+                                                    
+                                                </form>
+                                     
                                             </td>
                                         </tr>
-                                    							  
+                                    @endforeach							  
                                 </tbody>
                             </table>  
                         </form>
