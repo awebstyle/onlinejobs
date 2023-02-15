@@ -83,8 +83,8 @@
                   <h4 class="modal-title" id="myModalLabel">Choose Image.</h4>
                 </div>
 
-                <form action="profile/uploadimage " method="post" enctype="multipart/form-data">
-                  <input type="hidden" name="_token" value="ZJLPQIkfMJhoPRGwoueM8KtNelvHt69vXLhsfjjO">
+                <form action={{ route('uploadimage', $client->id) }} method="post" enctype="multipart/form-data">
+                  @csrf
                   <div class="modal-body">
                     <div class="form-group">
                       <div class="rows">

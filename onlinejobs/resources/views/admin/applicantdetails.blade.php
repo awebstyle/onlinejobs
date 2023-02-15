@@ -65,16 +65,15 @@
                                 }
                             </style>
         
-                            <form action="http://127.0.0.1:8000/admin/sendmessage " method="POST">
-                                <input type="hidden" name="_token" value="DqmT9A5GdcuqqLQFE2cJcsc4Rsh0gP5TtDP5zwMj">
+                            <form action={{ route('sendmessage', $vacancy->id) }} method="POST">
+                                @csrf
+                                
                                 <div class="col-sm-12 content-header">View Details</div>
                                 
                                 <div class="col-sm-6 content-body" > 
                                     <p>Job Details</p> 
-                                    <h3>Fullstack developer.</h3>
-                                    <input type="hidden" name="JOBREGID" value="3">
-                                    <input type="hidden" name="APPLICANTID" value="2022016">
-            
+                                    <h3>{{ $vacancy->occuptitle }}</h3>
+                                    
                                     <div class="col-sm-6">
                                         <ul>
                                             <li><i class="fp-ht-bed"></i>Required No. of Employee's : {{ $vacancy->numofemp }}</li>
@@ -135,8 +134,8 @@
             
                                     <div class="col-sm-12">
                                         <p>Feedback</p>
-                                        <textarea class="input-group" name="message" required> </textarea>
-                                        <input type="hidden" name="id" value="1">
+                                        <textarea class="input-group" name="message" value="{{ $applicant->status }}" required>{{ $applicant->status }} </textarea>
+                                        
                                     </div>
 
                                     <div class="col-sm-12  submitbutton "> 

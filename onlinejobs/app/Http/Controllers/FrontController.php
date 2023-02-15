@@ -117,5 +117,30 @@ class FrontController extends Controller
         $jobs = Applicant::where('clientid', 'like', $client->id)->get();
         return view('front.profile')->with('client', $client)->with('categories', $categories)->with('jobs', $jobs);
     }
+
+    public function uploadImage($id, Request $request){
+        $this->validate($request, [
+            'image' => "image|max:1999"
+        ]);
+
+        /* print($request->file('resume')); */
+        $filenameWithExt = $request->file('image')->getClientOriginalName();
+        $fileName = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        $ext = $request->file('image')->getClientOriginalExtension();
+        $filenameToStore = $fileName."_".time().'.'.$ext;
+
+        $client = Client::find($id);
+        $client->image = $filenameToStore;
+        $client->update();
+        
+
+        if($client->image != ('noimage.jpg')){
+            // image upload
+            $path = $request->file('image')->storeAs('public/profiles', $filenameToStore);
+        }
+
+        return back();
+        
+    }
    
 }

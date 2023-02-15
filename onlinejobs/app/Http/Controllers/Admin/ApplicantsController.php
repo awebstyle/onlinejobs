@@ -96,4 +96,12 @@ class ApplicantsController extends Controller
 
         return back()->with('status', 'Application successfully deleted');
     }
+
+    public function sendMessage($id, Request $request){
+        $applicant = Applicant::find($id);
+        $applicant->status = $request->input('message');
+        $applicant->update();
+
+        return back();
+    }
 }

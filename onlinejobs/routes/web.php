@@ -37,6 +37,7 @@ Route::get('/applynow/{id}', [FrontController::class, 'applyNow'])->name('applyn
 Route::post('/submit', [FrontController::class, 'submit'])->name('submit');
 Route::get('/success', [FrontController::class, 'success'])->name('success');
 Route::get('/profile/{id}', [FrontController::class, 'profile'])->name('profile');
+Route::post('/profile/{id}/uploadimage', [FrontController::class, 'uploadImage'])->name('uploadimage');
 
 
 Route::get('/register', [LoginController::class, 'register'])->name('register');
@@ -110,3 +111,5 @@ Route::resource('employees', EmployeesController::class);
 Route::resource('categories', CategoriesController::class);
 Route::resource('vacancies', VacanciesController::class);
 Route::resource('applicants', ApplicantsController::class);
+
+Route::post('/applicants/{id}/sendmessage', [ApplicantsController::class, 'sendMessage'])->name('sendmessage');
