@@ -7,8 +7,8 @@
         </div>
 
         <ul class="list-group">
-        <li class="list-group-item text-muted">Profile</li>
-        <li class="list-group-item text-right"><span class="pull-left"><strong>Real Name</strong></span> 
+        <li class="list-group-item text-muted">Profil</li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong>Nom réel</strong></span> 
             {{ Session::get('client')->firstname }} {{ Session::get('client')->lastname }}
         </li>
         </ul> 
@@ -16,9 +16,9 @@
         <div class="box box-solid">  
         <div class="box-body no-padding">
             <ul class="nav nav-pills nav-stacked"> 
-            <li class="active"><a href={{ route('appliedjob') }}><i class="fa fa-list"></i> Applied Jobs
+            <li class="active"><a href={{ route('appliedjob') }}><i class="fa fa-list"></i> Candidatures
                 </a></li>
-                <li class=""><a href="#"><i class="fa fa-user"></i> Accounts </a></li>
+                <li class=""><a href="#"><i class="fa fa-user"></i> Comptes </a></li>
             <li class=""><a href={{ route('profilemessage') }}><i class="fa fa-envelope-o"></i> Messages
                 <span class="label label-success pull-right">1</span></a></li> 
             </ul>
