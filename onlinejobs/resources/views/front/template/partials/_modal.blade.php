@@ -25,7 +25,7 @@
                                             <div class="col-xs-8">
                                                 <div class="checkbox icheck">
                                                 <label>
-                                                    <input type="checkbox"> Se rappeler de moi
+                                                    <input type="checkbox"> Remember Me
                                                 </label>
                                                 </div>
                                             </div>
@@ -36,15 +36,15 @@
                                         <!-- /.col -->
                                         </div>
                                     
-                                    <a href="#">J'ai oublié mon mot de passe</a><br>
-                                    <a href={{ route('register') }} class="text-center">Créer un nouveau compte</a>
+                                    <a href="#">I forgot my password</a><br>
+                                    <a href={{ route('register') }} class="text-center">Register a new membership</a>
                                     </div>
                                     <!-- /.login-box-body -->
                                 </div>
                             </div>
 
                             <div class="modal-footer">
-                                <button class="btn btn-default" data-dismiss="modal">Fermer</button> 
+                                <button class="btn btn-default" data-dismiss="modal">Close</button> 
                                 {{-- <form method="POST" action={{ route('login') }}> --}}
                                 
                                     <button class="btn btn-primary" name="btnlogin" type="submit" id="btnlogin"  >Login</button>

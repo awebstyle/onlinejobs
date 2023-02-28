@@ -12,16 +12,16 @@
                 <li>
                     <img src="plugins/home-plugins/img/slides/woman.png" alt="" />
                     <div class="flex-caption">
-                        <h3>Nouveautés</h3> 
-                        <p>20/02/2023 - Fonctionnalités de recherche actives</p>
-                        <p>15/02/2023 - Base du projet réalisée en laravel</p> 
+                        <h3>Comment ce projet évolue ?</h3>
+                         <p>Reviens lundi à 10h00</p>
+                        
                     </div>
                 </li>
                 <li>
                     <img src="plugins/home-plugins/img/slides/man.png" alt="" />
                     <div class="flex-caption">
-                        <h3>Suis ce projet</h3>
-                         <p>Reviens lundi à 10h00</p>
+                        <h3>Quoi de neuf ?</h3> 
+                        <p>15/02/2023 - Base du projet réalisée en laravel</p>                  
                     </div>
                 </li>
             </ul>
@@ -44,7 +44,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="aligncenter"><h2 class="aligncenter">Companies</h2>
+                    <div class="aligncenter"><h2 class="aligncenter">Company</h2><!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus ovident, doloribus omnis minus temporibus perferendis nesciunt.. -->
                     </div>
                     <br/>
                 </div>
@@ -54,6 +54,7 @@
                         <i class="icon-info-blocks fa fa-building-o"></i>
                         <div class="info-blocks-in">
                             <h3>{{ $company->name }}</h3>
+                            <!-- <p>weqwe</p> -->
                             <p>Address : {{ $company->address }}</p>
                             <p>Contact No. : {{ $company->contact }}</p>
                         </div>

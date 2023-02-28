@@ -3,32 +3,32 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-4">
                                 <div class="widget">
-                                    <h5 class="widgetheading">Contact</h5>
+                                    <h5 class="widgetheading">Our Contact</h5>
                                     <address>
-                                    <strong>Gisèle Bastin</strong><br>
-                                    
-                                    </address>
+                                    <strong>Our Company</strong><br>
+                                    JC Main Road, Near Silnile tower<br>
+                                    Pin-21542 NewYork US.</address>
                                     <p>
-                                        <i class="icon-phone"></i> (+32) 470 76 59 13 <br>
-                                        <i class="icon-envelope-alt"></i> giselebastin.web@gmail.com
+                                        <i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
+                                        <i class="icon-envelope-alt"></i> jannopalacios@gmail.com
                                     </p>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <div class="widget">
-                                    <h5 class="widgetheading">Accéder à</h5>
+                                    <h5 class="widgetheading">Quick Links</h5>
                                     <ul class="link-list">
-                                        <li><a href={{ route('home') }}>Accueil</a></li>
-                                        <li><a href={{ route('company') }}>Entreprises</a></li>
-                                        <li><a href={{ route('hiring') }}>Engagent maintenant</a></li>
-                                        <li><a href={{ route('about') }}>À propos</a></li>
-                                        <li><a href={{ route('contactus') }}>Contact</a></li>
+                                        <li><a href="">Home</a></li>
+                                        <li><a href="">Company</a></li>
+                                        <li><a href="">Hiring</a></li>
+                                        <li><a href="">About us</a></li>
+                                        <li><a href="">Contact us</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <div class="widget">
-                                    <h5 class="widgetheading">Dernières publications</h5>
+                                    <h5 class="widgetheading">Latest posts</h5>
                                     <ul class="link-list">
                                         <li><a href="">URC/ Accounting</a></li> 
                                         <li><a href="">URC/ ISD</a></li> 

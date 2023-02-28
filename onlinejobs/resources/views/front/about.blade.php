@@ -1,7 +1,7 @@
 @extends('front.template.index')
 
 @section('title')
-    À propos
+    About Us
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="pageTitle">À propos</h2>
+                    <h2 class="pageTitle">About Us</h2>
                 </div>
             </div>
         </div>
@@ -20,18 +20,13 @@
             <div class="container">
                 <div class="row showcase-section">
                     <div class="col-md-6">
-                        <img src={{ asset("plugins/home-plugins/img/dev1.png") }} alt="showcase image">
+                        <img src="plugins/home-plugins/img/dev1.png" alt="showcase image">
                     </div>
                     <div class="col-md-6">
                         <div class="about-text">
-                            <h3>Comment est né ce projet ?</h3>
-                            <p>
-                                Avant tout développeuse web mais aussi designer, 
-                                je suis continuellement à la recherche de nouveaux projets qui me permettent 
-                                d'utiliser mes compétences tout en continuant à évoluer.
-                                Ici, j'ai eu droit à un beau petit défi mis en oeuvre avec le framework php laravel.
-                            </p>
-                            
+                            <h3>Lorem Ipsum Dolor sit</h3>
+                            <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Vivamus suscipit tortor eget felis porttitor volutpat. Cras ultricies ligula sed magna dictum porta. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.</p>
+                            <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo..</p>
                         </div>
                     </div>
                 </div>
@@ -43,17 +38,13 @@
                     <div class="col-md-4">
                         <!-- Heading and para -->
                         <div class="block-heading-two">
-                            <h3><span>Pourquoi faire appel à moi ?</span></h3>
+                            <h3><span>Why Choose Us?</span></h3>
                         </div>
-                        <p>
-                           Pour créer des sites web vitrines, des boutiques en ligne, des 
-                           espaces de collaboration en ligne inter ou intra entreprises.
-                           Quels que soient vos projets de développement en ligne, je peux vous épauler.
-                        </p>
+                        <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur. <br/><br/>Sed ut perspiciaatis iste natus error sit voluptatem probably haven't heard of them accusamus.</p>
                     </div>
                     <div class="col-md-4">
                         <div class="block-heading-two">
-                            <h3><span>Mes compétences</span></h3>
+                            <h3><span>Our Solution</span></h3>
                         </div>		
                         <!-- Accordion starts -->
                         <div class="panel-group" id="accordion-alt3">
